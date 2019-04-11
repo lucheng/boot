@@ -1,0 +1,12 @@
+server:
+  port: 8022
+management:
+  server:
+    port: 9022
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
