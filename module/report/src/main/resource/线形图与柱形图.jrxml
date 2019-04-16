@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 7.2.1.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="88afb611-d801-463c-88ba-8929ea742758">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="cmVwb3J0Lm9yZGVycyBBUyAsMTQxLDE0OSxhY2ZlY2JlZS1hMmVlLTQzM2ItYTI2Ni0xMmJlZDk5&#xA;ZDA1MDA7&#xA;"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="report"/>
+	<subDataset name="Dataset1" uuid="59a1dad1-5118-4022-8878-26742a5e45a8">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="report"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT report.orders.`ORDERID`,
+	report.orders.`CUSTOMERID`,
+	report.orders.`EMPLOYEEID`,
+	report.orders.`ORDERDATE`
+FROM report.orders limit 10]]>
+		</queryString>
+		<field name="ORDERID" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="ORDERID"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+		</field>
+		<field name="CUSTOMERID" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="CUSTOMERID"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+		</field>
+		<field name="EMPLOYEEID" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="EMPLOYEEID"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+		</field>
+		<field name="ORDERDATE" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.label" value="ORDERDATE"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+		</field>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[SELECT report.orders.`ORDERID`
+FROM report.orders limit 1]]>
+	</queryString>
+	<title>
+		<band height="802" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="0" width="290" height="160" uuid="f6b342bc-b78d-467b-be70-98b19619ff15"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="Line">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="title.text" value=""/>
+						<hc:chartProperty name="credits.enabled" value="false"/>
+						<hc:chartProperty name="credits.href" value=""/>
+						<hc:chartProperty name="credits.text" value=""/>
+						<hc:chartProperty name="yAxis.title.text" value=""/>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="com.jaspersoft.studio.highcharts.dataconfiguration.simple" value="true"/>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="Dataset1" uuid="530461fd-210a-4a71-b5f4-5bdb67cd8f4e"/>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Level1">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{EMPLOYEEID}]]></bucketExpression>
+									<labelExpression><![CDATA[$F{EMPLOYEEID} + "月"]]></labelExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns">
+							<axisLevel name="Series1">
+								<labelExpression><![CDATA[]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{CUSTOMERID}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Measure1" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA[""]]></labelExpression>
+							<valueExpression><![CDATA[$F{ORDERID}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+				</hc:chart>
+			</componentElement>
+			<componentElement>
+				<reportElement x="300" y="0" width="260" height="160" uuid="f219c6fd-56f2-4c60-8171-ef8cc5852417"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="Line">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="title.text" value=""/>
+						<hc:chartProperty name="credits.enabled" value="false"/>
+						<hc:chartProperty name="credits.href" value=""/>
+						<hc:chartProperty name="credits.text" value=""/>
+						<hc:chartProperty name="yAxis.title.text" value=""/>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="com.jaspersoft.studio.highcharts.dataconfiguration.simple" value="true"/>
+						<hc:chartProperty name="chart.alignTicks_customSimpleMode" value="true"/>
+						<hc:chartProperty name="chart.alignTicks">
+							<hc:propertyExpression><![CDATA[true]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="chart.showAxes_customSimpleMode" value="true"/>
+						<hc:chartProperty name="chart.showAxes">
+							<hc:propertyExpression><![CDATA[false]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="legend.verticalAlign" value="middle"/>
+						<hc:chartProperty name="legend.align" value="left"/>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="Dataset1" uuid="6154cc27-db11-4284-8246-aebf2a30f52f"/>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Level1">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{EMPLOYEEID}]]></bucketExpression>
+									<labelExpression><![CDATA[$F{EMPLOYEEID} + "月"]]></labelExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns">
+							<axisLevel name="Series1">
+								<labelExpression><![CDATA[]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{CUSTOMERID}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Measure1" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA[""]]></labelExpression>
+							<valueExpression><![CDATA[$F{ORDERID}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+				</hc:chart>
+			</componentElement>
+			<componentElement>
+				<reportElement x="80" y="180" width="400" height="150" uuid="90e47bb9-6e71-4d6e-91a4-a55e25955420"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="Column" evaluationTime="Report">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="title.text" value=""/>
+						<hc:chartProperty name="credits.enabled" value="false"/>
+						<hc:chartProperty name="credits.href" value=""/>
+						<hc:chartProperty name="credits.text" value=""/>
+						<hc:chartProperty name="yAxis.title.text" value=""/>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="com.jaspersoft.studio.highcharts.dataconfiguration.simple" value="true"/>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="Dataset1" uuid="3f8a3421-06b9-4546-aa60-c95bf9d1c66f"/>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Level1">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{EMPLOYEEID}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns">
+							<axisLevel name="Series1">
+								<labelExpression><![CDATA[]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{CUSTOMERID}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Measure1" class="java.lang.Number" calculation="DistinctCount">
+							<labelExpression><![CDATA[""]]></labelExpression>
+							<valueExpression><![CDATA[$F{ORDERID}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+				</hc:chart>
+			</componentElement>
+			<componentElement>
+				<reportElement x="77" y="350" width="400" height="150" uuid="36f2f65b-4c6b-49a1-8258-153c7c813e7b"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="StackedColumn" evaluationTime="Report">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="title.text" value=""/>
+						<hc:chartProperty name="credits.enabled" value="false"/>
+						<hc:chartProperty name="credits.href" value=""/>
+						<hc:chartProperty name="credits.text" value=""/>
+						<hc:chartProperty name="yAxis.title.text" value=""/>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="com.jaspersoft.studio.highcharts.dataconfiguration.simple" value="true"/>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="Dataset1" uuid="ce06dc16-82cb-4702-9ed9-b499e70dcfb9"/>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Level1">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{EMPLOYEEID}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns">
+							<axisLevel name="Series1">
+								<labelExpression><![CDATA[]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{CUSTOMERID}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Measure1" class="java.lang.Number" calculation="Count">
+							<labelExpression><![CDATA[""]]></labelExpression>
+							<valueExpression><![CDATA[$F{ORDERID}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+				</hc:chart>
+			</componentElement>
+		</band>
+	</title>
+	<summary>
+		<band height="227" splitType="Stretch"/>
+	</summary>
+</jasperReport>

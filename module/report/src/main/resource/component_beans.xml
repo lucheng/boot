@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean id="componentsBundle" class="net.sf.jasperreports.engine.component.DefaultComponentsBundle">
+		<property name="xmlParser">
+			<ref bean="xmlParser" />
+		</property>
+		
+		<property name="componentManagers">
+			<map>
+				<entry key="chart">
+					<ref bean="chartManager"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="xmlParser" class="net.sf.jasperreports.engine.component.DefaultComponentXmlParser">
+		<property name="namespace">
+			<value>http://jaspersoft.com/highcharts</value>
+		</property>
+		<property name="publicSchemaLocation">
+			<value>http://jaspersoft.com/schema/highcharts.xsd</value>
+		</property>
+		<property name="internalSchemaResource">
+			<value>com/jaspersoft/jasperreports/highcharts/highcharts.xsd</value>
+		</property>
+		<property name="digesterConfigurer">
+			<ref bean="highchartsXmlDigesterConfigurer"/>
+		</property>
+	</bean>
+
+	<bean id="highchartsXmlDigesterConfigurer" class="com.jaspersoft.jasperreports.highcharts.HighchartsXmlDigesterConfigurer"/>
+
+	<bean id="exportHandlerBundle" 
+			class="net.sf.jasperreports.engine.export.DefaultElementHandlerBundle">
+		<property name="namespace" value="http://jaspersoft.com/highcharts"/>
+		<property name="elementHandlers">
+			<map>
+				<entry key="chart">
+					<map>
+						<entry key="net.sf.jasperreports.html">
+							<ref bean="chartHtmlHandler"/>
+						</entry>
+						<entry key="net.sf.jasperreports.json">
+							<ref bean="chartJsonHandler"/>
+						</entry>
+						<entry key="net.sf.jasperreports.pdf">
+							<ref bean="chartPdfHandler"/>
+						</entry>
+						<entry key="net.sf.jasperreports.docx">
+							<ref bean="chartDocxHandler"/>
+						</entry>
+						<entry key="net.sf.jasperreports.pptx">
+							<ref bean="chartPptxHandler"/>
+						</entry>
+						<entry key="net.sf.jasperreports.xlsx">
+							<ref bean="chartXlsxHandler"/>
+						</entry>
+						<entry key="net.sf.jasperreports.ods">
+							<ref bean="chartOdsHandler"/>
+						</entry>
+						<entry key="net.sf.jasperreports.odt">
+							<ref bean="chartOdtHandler"/>
+						</entry>
+						<entry key="net.sf.jasperreports.rtf">
+							<ref bean="chartRtfHandler"/>
+						</entry>
+						<entry key="net.sf.jasperreports.xls">
+							<ref bean="chartXlsHandler"/>
+						</entry>
+						<entry key="net.sf.jasperreports.xml4swf">
+							<ref bean="chartXml4SwfHandler"/>
+						</entry>
+						<entry key="net.sf.jasperreports.graphics2d">
+							<ref bean="chartGraphics2DHandler"/>
+						</entry>
+					</map>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="chartManager" class="com.jaspersoft.jasperreports.highcharts.HighchartsComponentManager">
+		<property name="componentCompiler">
+			<bean class="com.jaspersoft.jasperreports.highcharts.charts.ChartCompiler"/>
+		</property>
+		<property name="componentFillFactory">
+			<bean class="com.jaspersoft.jasperreports.highcharts.charts.ChartFillFactory">
+				<property name="svgImageProducer">
+					<ref bean="chartImageProducer"/>
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="baseChartsLocationResolver" 
+		class="com.jaspersoft.jasperreports.highcharts.charts.AbstractResourceLocationResolver"
+		abstract="true">
+	</bean>
+
+	<bean id="htmlLocationResolver" 
+		class="com.jaspersoft.jasperreports.highcharts.charts.CompositeLocationResolver">
+		<property name="resolvers">
+			<list>
+				<bean 
+					class="com.jaspersoft.jasperreports.highcharts.charts.ContextResourceLocationResolver"
+					parent="baseChartsLocationResolver">
+				</bean>
+				<bean 
+					class="com.jaspersoft.jasperreports.highcharts.charts.PropertiesResourceLocationResolver"
+					parent="baseChartsLocationResolver">
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="scriptResourceResolver" class="com.jaspersoft.jasperreports.highcharts.charts.render.CompositeScriptResourceResolver">
+		<property name="resolvers">
+			<list>
+				<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.PropertiesScriptResourceResolver"/>
+				<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.ScriptResourceMapResolver">
+					<property name="scriptResources">
+						<map>
+							<entry key="com.jaspersoft.jasperreports.highcharts.highcharts.js">
+								<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.RequirejsScriptResource">
+									<property name="resourceLocation" value="com/jaspersoft/jasperreports/highcharts/charts/render/scripts/highcharts-4.2.1.src.js"/>
+                                    <property name="classpathResource" value="true"/>
+                                    <property name="moduleName" value="highcharts"/>
+                                    <property name="shimExports" value="Highcharts"/>
+                                    <property name="shimDeps">
+                                        <list>
+                                            <value>jquery</value>
+                                        </list>
+                                    </property>
+								</bean>
+							</entry>
+                            <entry key="com.jaspersoft.jasperreports.highcharts.highcharts.more.js">
+                                <bean class="com.jaspersoft.jasperreports.highcharts.charts.render.RequirejsScriptResource">
+                                    <property name="resourceLocation" value="com/jaspersoft/jasperreports/highcharts/charts/render/scripts/highcharts-more-4.2.1.src.js"/>
+                                    <property name="classpathResource" value="true"/>
+                                    <property name="moduleName" value="highcharts-more"/>
+                                    <property name="shimExports" value="Highcharts"/>
+                                    <property name="shimDeps">
+                                        <list>
+                                            <value>highcharts</value>
+                                            <value>highcharts-escape-ext</value>
+                                            <value>highcharts-heatmap</value>
+                                            <value>highcharts-treemap</value>
+                                            <value>highcharts-3d</value>
+                                        </list>
+                                    </property>
+                                </bean>
+                            </entry>
+                            <entry key="com.jaspersoft.jasperreports.highcharts.highcharts.heatmap.js">
+                                <bean class="com.jaspersoft.jasperreports.highcharts.charts.render.RequirejsScriptResource">
+                                    <property name="resourceLocation" value="com/jaspersoft/jasperreports/highcharts/charts/render/scripts/highcharts-heatmap-4.2.1.src.js"/>
+                                    <property name="classpathResource" value="true"/>
+                                    <property name="moduleName" value="highcharts-heatmap"/>
+                                    <property name="shimExports" value="Highcharts"/>
+                                    <property name="shimDeps">
+                                        <list>
+                                            <value>highcharts</value>
+                                        </list>
+                                    </property>
+                                </bean>
+                            </entry>
+                            <entry key="com.jaspersoft.jasperreports.highcharts.highcharts.treemap.js">
+                                <bean class="com.jaspersoft.jasperreports.highcharts.charts.render.RequirejsScriptResource">
+                                    <property name="resourceLocation" value="com/jaspersoft/jasperreports/highcharts/charts/render/scripts/highcharts-treemap-4.2.1.src.js"/>
+                                    <property name="classpathResource" value="true"/>
+                                    <property name="moduleName" value="highcharts-treemap"/>
+                                    <property name="shimExports" value="Highcharts"/>
+                                    <property name="shimDeps">
+                                        <list>
+                                            <value>highcharts-heatmap</value>
+                                        </list>
+                                    </property>
+                                </bean>
+                            </entry>
+                            <entry key="com.jaspersoft.jasperreports.highcharts.highcharts.3d.js">
+                                <bean class="com.jaspersoft.jasperreports.highcharts.charts.render.RequirejsScriptResource">
+                                    <property name="resourceLocation" value="com/jaspersoft/jasperreports/highcharts/charts/render/scripts/highcharts-3d-4.2.1.src.js"/>
+                                    <property name="classpathResource" value="true"/>
+                                    <property name="moduleName" value="highcharts-3d"/>
+                                    <property name="shimExports" value="Highcharts"/>
+                                    <property name="shimDeps">
+                                        <list>
+                                            <value>highcharts</value>
+                                        </list>
+                                    </property>
+                                </bean>
+                            </entry>
+                            <entry key="com.jaspersoft.jasperreports.highcharts.highcharts.solid.gauge.js">
+                                <bean class="com.jaspersoft.jasperreports.highcharts.charts.render.RequirejsScriptResource">
+                                    <property name="resourceLocation" value="com/jaspersoft/jasperreports/highcharts/charts/render/scripts/highcharts-solid-gauge-4.2.1.src.js"/>
+                                    <property name="classpathResource" value="true"/>
+                                    <property name="moduleName" value="highcharts-solid-gauge"/>
+                                    <property name="shimExports" value="Highcharts"/>
+                                    <property name="shimDeps">
+                                        <list>
+                                            <value>highcharts-more</value>
+                                        </list>
+                                    </property>
+                                </bean>
+                            </entry>
+							<entry key="com.jaspersoft.jasperreports.highcharts.highcharts.bbox.js">
+								<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.RequirejsScriptResource">
+									<property name="resourceLocation" value="com/jaspersoft/jasperreports/highcharts/charts/render/scripts/highcharts-4.2.1.bbox.js"/>
+                                    <property name="moduleName" value="highcharts"/>
+                                    <property name="shimExports" value="Highcharts"/>
+                                    <property name="shimDeps">
+                                        <list>
+                                            <value>jquery</value>
+                                        </list>
+                                    </property>
+								</bean>
+							</entry>
+							<entry key="com.jaspersoft.jasperreports.highcharts.jquery.js">
+								<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.RequirejsScriptResource">
+									<property name="resourceLocation" value="com/jaspersoft/jasperreports/highcharts/charts/render/scripts/jquery-1.10.2.min.js"/>
+                                    <property name="classpathResource" value="true"/>
+                                    <property name="moduleName" value="jquery"/>
+								</bean>
+							</entry>
+							<entry key="com.jaspersoft.jasperreports.highcharts.render.env-rhino.js">
+								<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.DefaultScriptResource">
+									<property name="resourceLocation"
+										value="com/jaspersoft/jasperreports/highcharts/charts/render/scripts/env.rhino-1.2.js"/>
+									<property name="compilable" value="false"/>
+								</bean>
+							</entry>
+							<entry key="com.jaspersoft.jasperreports.highcharts.render.svg-renderer-highcharts.js">
+								<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.DefaultScriptResource">
+									<property name="resourceLocation"
+										value="com/jaspersoft/jasperreports/highcharts/charts/render/scripts/svg-renderer-highcharts.js"/>
+								</bean>
+							</entry>
+							<entry key="com.jaspersoft.jasperreports.highcharts.render.exporting.js">
+								<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.RequirejsScriptResource">
+									<property name="resourceLocation"
+										value="com/jaspersoft/jasperreports/highcharts/charts/render/scripts/exporting-4.2.1.src.js"/>
+                                    <property name="moduleName" value="highcharts-exporting"/>
+                                    <property name="shimExports" value="Highcharts"/>
+                                    <property name="shimDeps">
+                                        <list>
+                                            <value>highcharts-solid-gauge</value>
+                                        </list>
+                                    </property>
+								</bean>
+							</entry>
+							<entry key="com.jaspersoft.jasperreports.highcharts.render.add-BBox.js">
+								<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.DefaultScriptResource">
+									<property name="resourceLocation"
+										value="com/jaspersoft/jasperreports/highcharts/charts/render/scripts/add-BBox.js"/>
+								</bean>
+							</entry>
+							<entry key="com.jaspersoft.jasperreports.highcharts.render.formatWrapper.js">
+								<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.RequirejsScriptResource">
+									<property name="resourceLocation"
+										value="com/jaspersoft/jasperreports/highcharts/charts/render/scripts/formatWrapper.js"/>
+                                    <property name="moduleName" value="formatWrapper"/>
+								</bean>
+							</entry>
+							<entry key="com.jaspersoft.jasperreports.highcharts.data.service.js">
+								<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.RequirejsScriptResource">
+									<property name="resourceLocation"
+										value="com/jaspersoft/jasperreports/highcharts/charts/services/require/data.service.js"/>
+                                    <property name="moduleName" value="dataSettingService" />
+								</bean>
+							</entry>
+							<entry key="com.jaspersoft.jasperreports.highcharts.default.service.js">
+								<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.RequirejsScriptResource">
+									<property name="resourceLocation"
+										value="com/jaspersoft/jasperreports/highcharts/charts/services/require/default.service.js"/>
+                                    <property name="moduleName" value="defaultSettingService" />
+								</bean>
+							</entry>
+							<entry key="com.jaspersoft.jasperreports.highcharts.item.hyperlink.service.js">
+								<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.RequirejsScriptResource">
+									<property name="resourceLocation"
+										value="com/jaspersoft/jasperreports/highcharts/charts/services/require/item.hyperlink.service.js"/>
+                                    <property name="moduleName" value="itemHyperlinkSettingService" />
+								</bean>
+							</entry>
+							<entry key="com.jaspersoft.jasperreports.highcharts.y.axis.service.js">
+								<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.RequirejsScriptResource">
+									<property name="resourceLocation"
+										value="com/jaspersoft/jasperreports/highcharts/charts/services/require/y.axis.service.js"/>
+                                    <property name="moduleName" value="yAxisSettingService" />
+								</bean>
+							</entry>
+							<entry key="com.jaspersoft.jasperreports.highcharts.dual.pie.service.js">
+								<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.RequirejsScriptResource">
+									<property name="resourceLocation"
+										value="com/jaspersoft/jasperreports/highcharts/charts/services/require/dual.pie.service.js"/>
+                                    <property name="moduleName" value="dualPieSettingService" />
+								</bean>
+							</entry>
+							<entry key="com.jaspersoft.jasperreports.highcharts.treemap.service.js">
+								<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.RequirejsScriptResource">
+									<property name="resourceLocation"
+										value="com/jaspersoft/jasperreports/highcharts/charts/services/require/treemap.service.js"/>
+                                    <property name="moduleName" value="treemapSettingService" />
+								</bean>
+							</entry>
+							<entry key="com.jaspersoft.jasperreports.highcharts.phantomjs.highcharts.convert.js">
+								<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.DefaultScriptResource">
+									<property name="resourceLocation"
+										value="com/jaspersoft/jasperreports/highcharts/charts/render/scripts/phantomjs/highcharts-convert-svg.js"/>
+								</bean>
+							</entry>
+							<entry key="com.jaspersoft.jasperreports.highcharts.phantomjs.highcharts.phantom.js">
+								<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.DefaultScriptResource">
+									<property name="resourceLocation"
+										value="com/jaspersoft/jasperreports/highcharts/charts/render/scripts/phantomjs/highcharts-phantom.js"/>
+								</bean>
+							</entry>
+							<entry key="com.jaspersoft.jasperreports.highcharts.phantomjs.highcharts.js">
+								<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.RequirejsScriptResource">
+									<property name="resourceLocation" value="com/jaspersoft/jasperreports/highcharts/charts/render/scripts/phantomjs/highcharts-4.2.1.phantomjs.js"/>
+                                    <property name="classpathResource" value="true"/>
+                                    <property name="moduleName" value="highcharts"/>
+                                    <property name="shimExports" value="Highcharts"/>
+                                    <property name="shimDeps">
+                                        <list>
+                                            <value>jquery</value>
+                                        </list>
+                                    </property>
+								</bean>
+							</entry>
+							<entry key="com.jaspersoft.jasperreports.highcharts.render.r.js">
+								<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.DefaultScriptResource">
+									<property name="resourceLocation"
+										value="com/jaspersoft/jasperreports/highcharts/charts/render/scripts/require/r-2.1.11.src.js"/>
+									<property name="compilable" value="false"/>
+								</bean>
+							</entry>
+							<entry key="com.jaspersoft.jasperreports.highcharts.render.require.js">
+								<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.DefaultScriptResource">
+									<property name="resourceLocation"
+										value="com/jaspersoft/jasperreports/highcharts/charts/render/scripts/require/require-2.1.6.src.js"/>
+								</bean>
+							</entry>
+							<entry key="com.jaspersoft.jasperreports.highcharts.highcharts.chart.producer.js">
+								<bean class="com.jaspersoft.jasperreports.highcharts.charts.render.DefaultScriptResource">
+									<property name="resourceLocation"
+										value="com/jaspersoft/jasperreports/highcharts/charts/resources/highcharts.chart.producer.js"/>
+								</bean>
+							</entry>
+                            <entry key="com.jaspersoft.jasperreports.highcharts.highcharts.escape.ext.js">
+                                <bean class="com.jaspersoft.jasperreports.highcharts.charts.render.RequirejsScriptResource">
+                                    <property name="resourceLocation" value="com/jaspersoft/jasperreports/highcharts/charts/render/scripts/escapeUtilsExt.js"/>
+                                    <property name="classpathResource" value="true"/>
+                                    <property name="moduleName" value="highcharts-escape-ext"/>
+                                    <property name="shimExports" value="Highcharts"/>
+                                    <property name="shimDeps">
+                                        <list>
+                                            <value>highcharts</value>
+                                            <value>xssUtil</value>
+                                        </list>
+                                    </property>
+                                </bean>
+                            </entry>
+                            <entry key="com.jaspersoft.jasperreports.highcharts.xss.util.js">
+                                <bean class="com.jaspersoft.jasperreports.highcharts.charts.render.RequirejsScriptResource">
+                                    <property name="resourceLocation" value="com/jaspersoft/jasperreports/highcharts/charts/render/scripts/xssUtil.js"/>
+                                    <property name="classpathResource" value="true"/>
+                                    <property name="moduleName" value="xssUtil"/>
+                                </bean>
+                            </entry>
+						</map>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="chartImageProducer" class="com.jaspersoft.jasperreports.highcharts.charts.render.ChartSvgImageProducer">
+		<property name="chartSvgProducer">
+			<ref bean="chartSvgProducer"/>
+		</property>
+		<property name="minDPI" value="150"/>
+		<property name="antiAlias" value="true"/>
+	</bean>
+
+	<bean id="printChartCreator" class="com.jaspersoft.jasperreports.highcharts.charts.StandardPrintChartCreator">
+	</bean>
+
+	<bean id="chartSvgProducer" class="com.jaspersoft.jasperreports.highcharts.charts.render.DefaultChartSvgProducer">
+		<property name="JRPhantomChartSvgProducer">
+			<ref bean="JRPhantomChartSvgProducer"/>
+		</property>
+		<property name="phantomjsSvgProducer">
+			<ref bean="phantomjsSvgProducer"/>
+		</property>
+		<property name="rhinoSvgProducer">
+			<ref bean="rhinoSvgProducer"/>
+		</property>
+	</bean>
+
+	<bean id="rhinoSvgProducer" class="com.jaspersoft.jasperreports.highcharts.charts.render.RhinoChartSvgProducer">
+		<property name="printChartCreator">
+			<ref bean="printChartCreator"/>
+		</property>
+		<property name="scriptResources">
+			<list>
+                <value>com.jaspersoft.jasperreports.highcharts.render.env-rhino.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.render.r.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.jquery.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.render.svg-renderer-highcharts.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.bbox.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.more.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.heatmap.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.treemap.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.3d.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.solid.gauge.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.render.exporting.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.render.add-BBox.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.render.formatWrapper.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.escape.ext.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.xss.util.js</value>
+			</list>
+		</property>
+		<property name="scriptResourceResolver">
+			<ref bean="scriptResourceResolver"/>
+		</property>
+		<property name="localizationProvider">
+			<ref bean="localizationProvider"/>
+		</property>
+	</bean>
+
+	<bean id="localizationProvider" class="com.jaspersoft.jasperreports.highcharts.charts.StandardChartLocalizationProvider"/>
+
+	<bean id="phantomjsSvgProducer" class="com.jaspersoft.jasperreports.highcharts.charts.render.PhantomjsChartSvgProducer">
+		<property name="printChartCreator">
+			<ref bean="printChartCreator"/>
+		</property>
+		<property name="mainScriptLauncher">
+			<value>com.jaspersoft.jasperreports.highcharts.phantomjs.highcharts.convert.js</value>
+		</property>
+		<property name="scriptResources">
+			<list>
+                <value>com.jaspersoft.jasperreports.highcharts.render.require.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.jquery.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.phantomjs.highcharts.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.more.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.heatmap.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.treemap.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.3d.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.solid.gauge.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.escape.ext.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.xss.util.js</value>
+			</list>
+		</property>
+		<property name="scriptResourceResolver">
+			<ref bean="scriptResourceResolver"/>
+		</property>
+		<property name="localizationProvider">
+			<ref bean="localizationProvider"/>
+		</property>
+	</bean>
+
+	<bean id="JRPhantomChartSvgProducer" class="com.jaspersoft.jasperreports.highcharts.charts.render.JRPhantomChartSvgProducer">
+		<property name="printChartCreator">
+			<ref bean="printChartCreator"/>
+		</property>
+		<property name="mainScript">
+			<value>com.jaspersoft.jasperreports.highcharts.phantomjs.highcharts.phantom.js</value>
+		</property>
+		<property name="scriptResources">
+			<list>
+                <value>com.jaspersoft.jasperreports.highcharts.render.require.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.jquery.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.phantomjs.highcharts.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.more.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.heatmap.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.treemap.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.3d.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.solid.gauge.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.escape.ext.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.xss.util.js</value>
+			</list>
+		</property>
+		<property name="scriptResourceResolver">
+			<ref bean="scriptResourceResolver"/>
+		</property>
+		<property name="localizationProvider">
+			<ref bean="localizationProvider"/>
+		</property>
+	</bean>
+
+	<bean id="chartHtmlHandler" class="com.jaspersoft.jasperreports.highcharts.charts.ChartHtmlHandler">
+		<property name="resourceLocationResolver">
+			<ref bean="htmlLocationResolver"/>
+		</property>
+		<property name="printChartCreator">
+			<ref bean="printChartCreator"/>
+		</property>
+        <property name="scriptResources">
+            <list>
+                <value>com.jaspersoft.jasperreports.highcharts.render.require.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.jquery.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.more.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.heatmap.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.treemap.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.3d.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.solid.gauge.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.chart.producer.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.highcharts.escape.ext.js</value>
+                <value>com.jaspersoft.jasperreports.highcharts.xss.util.js</value>
+            </list>
+        </property>
+        <property name="scriptResourceResolver">
+            <ref bean="scriptResourceResolver"/>
+        </property>
+		<property name="localizationProvider">
+			<ref bean="localizationProvider"/>
+		</property>
+	</bean>
+
+    <bean id="chartJsonHandler" class="com.jaspersoft.jasperreports.highcharts.charts.json.ChartJsonHandler">
+        <property name="printChartCreator">
+            <ref bean="printChartCreator"/>
+        </property>
+		<property name="localizationProvider">
+			<ref bean="localizationProvider"/>
+		</property>
+    </bean>
+
+	<bean id="chartPdfHandler" class="com.jaspersoft.jasperreports.highcharts.charts.ChartPdfHandler">
+		<property name="chartImageProducer">
+			<ref bean="chartImageProducer"/>
+		</property>
+	</bean>
+
+	<bean id="chartDocxHandler" class="com.jaspersoft.jasperreports.highcharts.charts.ChartDocxHandler">
+		<property name="chartImageProducer">
+			<ref bean="chartImageProducer"/>
+		</property>
+	</bean>
+
+	<bean id="chartPptxHandler" class="com.jaspersoft.jasperreports.highcharts.charts.ChartPptxHandler">
+		<property name="chartImageProducer">
+			<ref bean="chartImageProducer"/>
+		</property>
+	</bean>
+
+	<bean id="chartXlsxHandler" class="com.jaspersoft.jasperreports.highcharts.charts.ChartXlsxHandler">
+		<property name="chartImageProducer">
+			<ref bean="chartImageProducer"/>
+		</property>
+	</bean>
+
+	<bean id="chartOdsHandler" class="com.jaspersoft.jasperreports.highcharts.charts.ChartOdsHandler">
+		<property name="chartImageProducer">
+			<ref bean="chartImageProducer"/>
+		</property>
+	</bean>
+
+	<bean id="chartOdtHandler" class="com.jaspersoft.jasperreports.highcharts.charts.ChartOdtHandler">
+		<property name="chartImageProducer">
+			<ref bean="chartImageProducer"/>
+		</property>
+	</bean>
+
+	<bean id="chartRtfHandler" class="com.jaspersoft.jasperreports.highcharts.charts.ChartRtfHandler">
+		<property name="chartImageProducer">
+			<ref bean="chartImageProducer"/>
+		</property>
+	</bean>
+
+	<bean id="chartXlsHandler" class="com.jaspersoft.jasperreports.highcharts.charts.ChartXlsHandler">
+		<property name="chartImageProducer">
+			<ref bean="chartImageProducer"/>
+		</property>
+	</bean>
+
+	<bean id="chartXml4SwfHandler" class="com.jaspersoft.jasperreports.highcharts.charts.ChartXml4SwfHandler">
+		<property name="chartImageProducer">
+			<ref bean="chartImageProducer"/>
+		</property>
+	</bean>
+
+	<bean id="chartGraphics2DHandler" class="com.jaspersoft.jasperreports.highcharts.charts.ChartGraphics2DHandler">
+		<property name="chartImageProducer">
+			<ref bean="chartImageProducer"/>
+		</property>
+	</bean>
+
+</beans>

@@ -1,0 +1,1527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 7.2.1.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="88afb611-d801-463c-88ba-8929ea742758">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="cmVwb3J0Lm9yZGVycyBBUyAsMTQxLDE0OSxhY2ZlY2JlZS1hMmVlLTQzM2ItYTI2Ni0xMmJlZDk5&#xA;ZDA1MDA7&#xA;"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="report"/>
+	<subDataset name="Dataset1" uuid="59a1dad1-5118-4022-8878-26742a5e45a8">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="report"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT report.orders.`ORDERID`,
+	report.orders.`CUSTOMERID`,
+	report.orders.`EMPLOYEEID`,
+	report.orders.`ORDERDATE`
+FROM report.orders limit 10]]>
+		</queryString>
+		<field name="ORDERID" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="ORDERID"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+		</field>
+		<field name="CUSTOMERID" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="CUSTOMERID"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+		</field>
+		<field name="EMPLOYEEID" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="EMPLOYEEID"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+		</field>
+		<field name="ORDERDATE" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.label" value="ORDERDATE"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+		</field>
+	</subDataset>
+	<subDataset name="人数" uuid="52fc7fe8-216c-4cb5-a46d-a3d228a147e4">
+		<property name="com.jaspersoft.studio.data.sql.tables" value="cmVwb3J0LnRlc3QgQVMgLDIzOCw0MSxlYTUzMzlmZC00Y2E3LTQ4YWEtODY0Yi0yM2I1NzZjOTNk&#xA;MTM7&#xA;"/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="report"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT report.test.id,
+	report.test.name,
+	report.test.text,
+	report.test.num
+FROM report.test]]>
+		</queryString>
+		<field name="id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="test"/>
+		</field>
+		<field name="name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="test"/>
+		</field>
+		<field name="text" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="text"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="test"/>
+		</field>
+		<field name="num" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="num"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="test"/>
+		</field>
+	</subDataset>
+	<subDataset name="图2" uuid="1723faf4-739f-42ed-b01b-69e35d68910f">
+		<property name="com.jaspersoft.studio.data.sql.tables" value="cmVwb3J0LmluZGV4IEFTICwyMjYsNDUsNDlhYTFmNGQtNzFiZS00NjM0LTkyOTQtMTNmYWY3YmVi&#xA;YzFjOw==&#xA;"/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="report"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT report.index.id,
+	report.index.name,
+	report.index.text,
+	report.index.num
+FROM report.index]]>
+		</queryString>
+		<field name="id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="index"/>
+		</field>
+		<field name="name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="index"/>
+		</field>
+		<field name="text" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="text"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="index"/>
+		</field>
+		<field name="num" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="num"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="index"/>
+		</field>
+	</subDataset>
+	<subDataset name="图2.2" uuid="8a6acd50-7f22-4127-8278-5f0632b77df6">
+		<property name="com.jaspersoft.studio.data.sql.tables" value="cmVwb3J0LmluZGV4X2NvbXBsZXggQVMgLDIwMCwzOCw5ZGVhNzcxNy04NTg1LTQ0YmEtOWZkOC02&#xA;ZGY2M2M5NGRjYzk7&#xA;"/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="report"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT report.index_complex.id,
+	report.index_complex.name,
+	report.index_complex.address,
+	report.index_complex.text,
+	report.index_complex.num
+FROM report.index_complex]]>
+		</queryString>
+		<field name="id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="index_complex"/>
+		</field>
+		<field name="name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="index_complex"/>
+		</field>
+		<field name="address" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="address"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="index_complex"/>
+		</field>
+		<field name="text" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="text"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="index_complex"/>
+		</field>
+		<field name="num" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="num"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="index_complex"/>
+		</field>
+	</subDataset>
+	<subDataset name="3点图" uuid="c9567f1a-1fe9-4d22-aa6b-398102ab0328">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="report"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT report.grade_index_complex.id,
+	report.grade_index_complex.item,
+	report.grade_index_complex.grade,
+	report.grade_index_complex.num
+FROM report.grade_index_complex]]>
+		</queryString>
+		<field name="id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="grade_index_complex"/>
+		</field>
+		<field name="item" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="item"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="grade_index_complex"/>
+		</field>
+		<field name="grade" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="grade"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="grade_index_complex"/>
+		</field>
+		<field name="num" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="num"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="grade_index_complex"/>
+		</field>
+	</subDataset>
+	<subDataset name="图4 单柱状图" uuid="f46968b7-4187-44f1-8990-daa737f5989b">
+		<property name="com.jaspersoft.studio.data.sql.tables" value="cmVwb3J0LmFkZHJlc3NfaXRlbV92YWx1ZSBBUyAsMTc1LDI4LGMzMTY3MmI2LTFmZTktNGViYS1i&#xA;NTRhLTUyZjBkMTdkYzNlODs=&#xA;"/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="report"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT report.address_item_value.id,
+	report.address_item_value.address,
+	report.address_item_value.item,
+	report.address_item_value.value
+FROM report.address_item_value]]>
+		</queryString>
+		<field name="id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_item_value"/>
+		</field>
+		<field name="address" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="address"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_item_value"/>
+		</field>
+		<field name="item" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="item"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_item_value"/>
+		</field>
+		<field name="value" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="value"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_item_value"/>
+		</field>
+	</subDataset>
+	<subDataset name="图5双柱形图" uuid="f0bb73f8-fede-493f-80bc-9403ad7d0e9b">
+		<property name="com.jaspersoft.studio.data.sql.tables" value="cmVwb3J0LmFkZHJlc3NfaXRlbV9zZXhfdmFsdWUgLDE1LDE1LDZlMjdlNmY4LTg2N2EtNGEyMC04&#xA;M2ExLTYyMjVhNzAyYTY5Mjs=&#xA;"/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="report"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT report.address_item_sex_value.id,
+	report.address_item_sex_value.address,
+	report.address_item_sex_value.sex,
+	report.address_item_sex_value.item,
+	report.address_item_sex_value.value,
+	report.address_item_sex_value.proportion
+FROM report.address_item_sex_value]]>
+		</queryString>
+		<field name="id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_item_sex_value"/>
+		</field>
+		<field name="address" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="address"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_item_sex_value"/>
+		</field>
+		<field name="sex" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="sex"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_item_sex_value"/>
+		</field>
+		<field name="item" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="item"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_item_sex_value"/>
+		</field>
+		<field name="value" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="value"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_item_sex_value"/>
+		</field>
+		<field name="proportion" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="proportion"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_item_sex_value"/>
+		</field>
+	</subDataset>
+	<subDataset name="9左右柱状图" uuid="273e2bcd-38ef-4577-991c-565bfd808423">
+		<property name="com.jaspersoft.studio.data.sql.tables" value="cmVwb3J0LmdyYWRlX251bSBBUyAsMjQ1LDU1LDIzYTljMGU3LWI0MWUtNGU3OC05NTYyLTUxZWE0&#xA;MDJiYjc2NTs=&#xA;"/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="report"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT report.grade_num.id,
+	report.grade_num.name,
+	report.grade_num.text,
+	report.grade_num.num
+FROM report.grade_num]]>
+		</queryString>
+		<field name="id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="grade_num"/>
+		</field>
+		<field name="name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="grade_num"/>
+		</field>
+		<field name="text" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="text"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="grade_num"/>
+		</field>
+		<field name="num" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="num"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="grade_num"/>
+		</field>
+	</subDataset>
+	<subDataset name="表格" uuid="f2ff3067-07ad-4549-98fd-f4e151a01a2f">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="report"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT report.address_item_sex_value.id,
+	report.address_item_sex_value.address,
+	report.address_item_sex_value.sex,
+	report.address_item_sex_value.item,
+	report.address_item_sex_value.value,
+	report.address_item_sex_value.proportion,
+	1 a
+FROM report.address_item_sex_value order by address,item,sex,id]]>
+		</queryString>
+		<field name="id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_item_sex_value"/>
+		</field>
+		<field name="address" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="address"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_item_sex_value"/>
+		</field>
+		<field name="sex" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="sex"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_item_sex_value"/>
+		</field>
+		<field name="item" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="item"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_item_sex_value"/>
+		</field>
+		<field name="value" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="value"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_item_sex_value"/>
+		</field>
+		<field name="proportion" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="proportion"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_item_sex_value"/>
+		</field>
+		<field name="a" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.label" value="a"/>
+		</field>
+	</subDataset>
+	<subDataset name="柱线图" uuid="ec26613b-a10c-4c8a-b3fa-d9a095ff2df0">
+		<property name="com.jaspersoft.studio.data.sql.tables" value="cmVwb3J0LmFkZHJlc3NfdmFsdWUgQVMgLDIxMCw5NCwyOTYyMWUyZS0xYTJmLTRiOTAtYTE0ZC0x&#xA;MzRmYjlmYmM2ZDg7&#xA;"/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="report"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT report.address_value.id,
+	report.address_value.address,
+	report.address_value.value1,
+	report.address_value.value2,
+	report.address_value.value3,
+	report.address_value.value4
+FROM report.address_value]]>
+		</queryString>
+		<field name="id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_value"/>
+		</field>
+		<field name="address" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="address"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_value"/>
+		</field>
+		<field name="value1" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="value1"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_value"/>
+		</field>
+		<field name="value2" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="value2"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_value"/>
+		</field>
+		<field name="value3" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="value3"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_value"/>
+		</field>
+		<field name="value4" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="value4"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="address_value"/>
+		</field>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[SELECT report.orders.`ORDERID`
+FROM report.orders limit 1]]>
+	</queryString>
+	<title>
+		<band height="802" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="30" width="560" height="220" uuid="f6b342bc-b78d-467b-be70-98b19619ff15"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="Line">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="title.text" value="人数"/>
+						<hc:chartProperty name="credits.enabled" value="false"/>
+						<hc:chartProperty name="credits.href" value=""/>
+						<hc:chartProperty name="credits.text" value=""/>
+						<hc:chartProperty name="yAxis.title.text" value=""/>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="com.jaspersoft.studio.highcharts.dataconfiguration.simple" value="true"/>
+						<hc:chartProperty name="title.style.fontSize_measureUnit" value="{&quot;key&quot;:&quot;px&quot;,&quot;name&quot;:&quot;px&quot;}"/>
+						<hc:chartProperty name="title.style.fontSize" value="14px"/>
+						<hc:chartProperty name="title.verticalAlign" value="top"/>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="人数" uuid="4ff29936-1712-4262-96dc-d1f072f7bf61"/>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Level1">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{text}]]></bucketExpression>
+									<labelExpression><![CDATA[$F{text}]]></labelExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns">
+							<axisLevel name="Series1">
+								<labelExpression><![CDATA[]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{name}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Measure1" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA[""]]></labelExpression>
+							<valueExpression><![CDATA[$F{num}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+				</hc:chart>
+			</componentElement>
+			<componentElement>
+				<reportElement x="0" y="280" width="560" height="220" uuid="400cfd32-580a-4c6c-85d7-106032d3b84b"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="Line">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="credits.enabled" value="false"/>
+						<hc:chartProperty name="credits.href" value=""/>
+						<hc:chartProperty name="credits.text" value=""/>
+						<hc:chartProperty name="yAxis.title.text" value=""/>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="com.jaspersoft.studio.highcharts.dataconfiguration.simple" value="true"/>
+						<hc:chartProperty name="title.style.fontSize_measureUnit" value="{&quot;key&quot;:&quot;px&quot;,&quot;name&quot;:&quot;px&quot;}"/>
+						<hc:chartProperty name="title.style.fontSize" value="14px"/>
+						<hc:chartProperty name="title.text" value="图表标题"/>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="图2" uuid="5d644c7f-1e44-44f8-bc27-7dbd0b405b9c"/>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Level1">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{text}]]></bucketExpression>
+									<labelExpression><![CDATA[$F{text}]]></labelExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns">
+							<axisLevel name="Series1">
+								<labelExpression><![CDATA[]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{name}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Measure1" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA[""]]></labelExpression>
+							<valueExpression><![CDATA[$F{num}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+				</hc:chart>
+			</componentElement>
+			<componentElement>
+				<reportElement x="0" y="540" width="560" height="220" uuid="18a863b8-ac7c-453a-b1a0-9960166c1324"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="Line">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="credits.enabled" value="false"/>
+						<hc:chartProperty name="credits.href" value=""/>
+						<hc:chartProperty name="credits.text" value=""/>
+						<hc:chartProperty name="yAxis.title.text" value=""/>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="com.jaspersoft.studio.highcharts.dataconfiguration.simple" value="true"/>
+						<hc:chartProperty name="title.style.fontSize_measureUnit" value="{&quot;key&quot;:&quot;px&quot;,&quot;name&quot;:&quot;px&quot;}"/>
+						<hc:chartProperty name="title.style.fontSize" value="14px"/>
+						<hc:chartProperty name="title.text" value="图表标题"/>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="图2.2" uuid="7fd8dfb9-073a-4842-8c42-9a41c05d897e"/>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Level1">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{address}+$F{text}]]></bucketExpression>
+									<labelExpression><![CDATA[$F{address}+" - "+$F{text}]]></labelExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns">
+							<axisLevel name="Series1">
+								<labelExpression><![CDATA[]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{name}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Measure1" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA[""]]></labelExpression>
+							<valueExpression><![CDATA[$F{num}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+				</hc:chart>
+			</componentElement>
+			<textField bookmarkLevel="1">
+				<reportElement x="0" y="0" width="100" height="30" uuid="0c4bcf0c-53d3-4fc5-88d9-24722ed6897a"/>
+				<textElement>
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["单线"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["单线"]]></anchorNameExpression>
+			</textField>
+			<textField bookmarkLevel="1">
+				<reportElement x="2" y="250" width="100" height="30" uuid="31c391b7-9152-4ee7-a43a-1bfe1eff0fd8"/>
+				<textElement>
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["多线"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["多线"]]></anchorNameExpression>
+			</textField>
+			<textField bookmarkLevel="1">
+				<reportElement x="0" y="510" width="100" height="30" uuid="19e7292f-d10d-46c8-8a37-f57110961e9a"/>
+				<textElement>
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["多线2"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["多线2"]]></anchorNameExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="556">
+			<componentElement>
+				<reportElement x="0" y="30" width="560" height="240" uuid="08f035c0-3e29-40e9-a55e-457cf956203e"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="Scatter">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="title.text" value=""/>
+						<hc:chartProperty name="credits.enabled" value="false"/>
+						<hc:chartProperty name="credits.href" value=""/>
+						<hc:chartProperty name="credits.text" value=""/>
+						<hc:chartProperty name="yAxis.title.text" value=""/>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="com.jaspersoft.studio.highcharts.dataconfiguration.simple" value="true"/>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="3点图" uuid="60bbb17c-896e-474e-a4ca-441096e14baa">
+									<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+								</datasetRun>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Level1">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$V{REPORT_COUNT}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns">
+							<axisLevel name="Series1">
+								<labelExpression><![CDATA[]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{item}]]></bucketExpression>
+									<labelExpression><![CDATA[$F{item}]]></labelExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Measure1" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA[""]]></labelExpression>
+							<valueExpression><![CDATA[$F{grade}]]></valueExpression>
+						</multiAxisMeasure>
+						<multiAxisMeasure name="Measure2" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA[""]]></labelExpression>
+							<valueExpression><![CDATA[$F{num}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+				</hc:chart>
+			</componentElement>
+			<componentElement>
+				<reportElement x="0" y="303" width="560" height="250" uuid="c30eac43-2b82-465e-9057-95e3365d884e"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="StackedColumn">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="title.text" value=""/>
+						<hc:chartProperty name="credits.enabled" value="false"/>
+						<hc:chartProperty name="credits.href" value=""/>
+						<hc:chartProperty name="credits.text" value=""/>
+						<hc:chartProperty name="yAxis.title.text" value=""/>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="com.jaspersoft.studio.highcharts.dataconfiguration.simple" value="true"/>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="图4 单柱状图" uuid="9dd337a0-60bc-4fbd-b41f-584145cabc00">
+									<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+								</datasetRun>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Level1">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{address}]]></bucketExpression>
+									<labelExpression><![CDATA[$F{address}]]></labelExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns">
+							<axisLevel name="Series1">
+								<labelExpression><![CDATA[]]></labelExpression>
+								<axisLevelBucket order="None" class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{item}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Measure1" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA[""]]></labelExpression>
+							<valueExpression><![CDATA[$F{value}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+				</hc:chart>
+			</componentElement>
+			<textField bookmarkLevel="1">
+				<reportElement x="1" y="0" width="100" height="30" uuid="0cd8acf7-db2e-4183-9a0e-ada83ce48e21"/>
+				<textElement>
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["点图和多点图"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["点图和多点图"]]></anchorNameExpression>
+			</textField>
+			<textField bookmarkLevel="1">
+				<reportElement x="0" y="271" width="100" height="30" uuid="3f804783-7e3c-45d6-95d4-a8e4753b4ed9"/>
+				<textElement>
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["单柱状图"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["单柱状图"]]></anchorNameExpression>
+			</textField>
+		</band>
+		<band height="50"/>
+		<band height="50"/>
+		<band height="771">
+			<componentElement>
+				<reportElement x="0" y="30" width="560" height="210" uuid="d5baf8bf-9ae0-4846-b3f3-31d1e1f961b3"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="Column">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="title.text" value=""/>
+						<hc:chartProperty name="credits.enabled" value="false"/>
+						<hc:chartProperty name="credits.href" value=""/>
+						<hc:chartProperty name="credits.text" value=""/>
+						<hc:chartProperty name="yAxis.title.text" value=""/>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="com.jaspersoft.studio.highcharts.dataconfiguration.simple" value="true"/>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="图5双柱形图" uuid="7c0727e7-be88-4987-bc00-5428cd495805">
+									<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+								</datasetRun>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Level1">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{address}+$F{sex}]]></bucketExpression>
+									<labelExpression><![CDATA[$F{address}+" - "+$F{sex}]]></labelExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns">
+							<axisLevel name="Series1">
+								<labelExpression><![CDATA[]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{item}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Measure1" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA[""]]></labelExpression>
+							<valueExpression><![CDATA[$F{value}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+				</hc:chart>
+			</componentElement>
+			<componentElement>
+				<reportElement x="2" y="272" width="560" height="210" uuid="ba85a039-bb6f-418c-a6a1-13497462668b"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="Column">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="title.text" value=""/>
+						<hc:chartProperty name="credits.enabled" value="false"/>
+						<hc:chartProperty name="credits.href" value=""/>
+						<hc:chartProperty name="credits.text" value=""/>
+						<hc:chartProperty name="yAxis.title.text" value=""/>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="com.jaspersoft.studio.highcharts.dataconfiguration.simple" value="true"/>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="图5双柱形图" uuid="73c680d3-a5e4-427d-bb4b-c50d3fbf3b02">
+									<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+								</datasetRun>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Level1">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{item}+$F{sex}]]></bucketExpression>
+									<labelExpression><![CDATA[$F{item}+" - "+$F{sex}]]></labelExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns">
+							<axisLevel name="Series1">
+								<labelExpression><![CDATA[]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{address}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Measure1" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA[""]]></labelExpression>
+							<valueExpression><![CDATA[$F{value}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+				</hc:chart>
+			</componentElement>
+			<componentElement>
+				<reportElement x="0" y="516" width="560" height="250" uuid="ca6b517d-eee6-4436-b073-2060f81d5707"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="StackedBar">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="title.text" value=""/>
+						<hc:chartProperty name="credits.enabled" value="false"/>
+						<hc:chartProperty name="credits.href" value=""/>
+						<hc:chartProperty name="credits.text" value=""/>
+						<hc:chartProperty name="yAxis.title.text" value=""/>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="plotOptions.column.stacking"/>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="图5双柱形图" uuid="d6ac8158-d34a-4e43-8f47-b4a2e9e981ba">
+									<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+								</datasetRun>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Level1">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{address}+$F{sex}]]></bucketExpression>
+									<labelExpression><![CDATA[$F{address}+" - "+$F{sex}]]></labelExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns">
+							<axisLevel name="Series1">
+								<labelExpression><![CDATA[]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{item}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Measure1" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA[""]]></labelExpression>
+							<valueExpression><![CDATA[$F{value}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+				</hc:chart>
+			</componentElement>
+			<textField bookmarkLevel="1">
+				<reportElement x="0" y="0" width="100" height="30" uuid="d87b6767-7299-4160-a7ba-5638c462a0e4"/>
+				<textElement>
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["双柱形图"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["双柱形图"]]></anchorNameExpression>
+			</textField>
+			<textField bookmarkLevel="1">
+				<reportElement x="0" y="240" width="100" height="30" uuid="cfa9686e-35ea-40e2-b2c1-b0232a43813b"/>
+				<textElement>
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["多柱形图"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["多柱形图"]]></anchorNameExpression>
+			</textField>
+			<textField bookmarkLevel="1">
+				<reportElement x="0" y="486" width="100" height="30" uuid="9f374208-cfb0-4347-8a4e-e07eec07a66b"/>
+				<textElement>
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["横柱状图"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["横柱状图"]]></anchorNameExpression>
+			</textField>
+		</band>
+		<band height="565">
+			<componentElement>
+				<reportElement x="0" y="30" width="560" height="250" uuid="4724fd75-3071-4f58-9411-4aeb01a76581"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="StackedBar">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="title.text" value=""/>
+						<hc:chartProperty name="credits.enabled" value="false"/>
+						<hc:chartProperty name="credits.href" value=""/>
+						<hc:chartProperty name="credits.text" value=""/>
+						<hc:chartProperty name="yAxis.title.text" value=""/>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="xAxis.labels.step"/>
+						<hc:chartProperty name="plotOptions.series.stacking" value="percent"/>
+						<hc:chartProperty name="tooltip.pointFormat" value="&lt;span style=&quot;color:{point.color}&quot;&gt;●&lt;/span&gt; {series.name}: &lt;b&gt;{point.y}&lt;/b&gt;&lt;br/&gt;({point.percentage:.0f}%)"/>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="图5双柱形图" uuid="ee474eb3-f62a-45eb-95e2-d40206896604">
+									<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+								</datasetRun>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Level1">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{address}]]></bucketExpression>
+									<labelExpression><![CDATA[$F{address}]]></labelExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns">
+							<axisLevel name="Series1">
+								<labelExpression><![CDATA[]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{item}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Measure1" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA[""]]></labelExpression>
+							<valueExpression><![CDATA[$F{proportion}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+				</hc:chart>
+			</componentElement>
+			<componentElement>
+				<reportElement x="0" y="310" width="560" height="250" uuid="261008b9-8fb4-4a25-aa8c-a3bba334254c"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="StackedBar">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="title.text" value=""/>
+						<hc:chartProperty name="credits.enabled" value="false"/>
+						<hc:chartProperty name="credits.href" value=""/>
+						<hc:chartProperty name="credits.text" value=""/>
+						<hc:chartProperty name="yAxis.title.text" value=""/>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="com.jaspersoft.studio.highcharts.dataconfiguration.simple" value="true"/>
+						<hc:chartProperty name="xAxis.labels.step"/>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="人数" uuid="e299dd3b-f47c-4156-968d-780a3e9e9311">
+									<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+								</datasetRun>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Level1">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{name}]]></bucketExpression>
+									<labelExpression><![CDATA[$F{name}]]></labelExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns">
+							<axisLevel name="Series1">
+								<labelExpression><![CDATA[]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{text}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Measure1" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA[""]]></labelExpression>
+							<valueExpression><![CDATA[$F{num}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+				</hc:chart>
+			</componentElement>
+			<textField bookmarkLevel="1">
+				<reportElement x="0" y="-1" width="100" height="30" uuid="c1243a56-5776-4711-99c8-48e966c611b6"/>
+				<textElement>
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["横柱状图百分比"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["横柱状图百分比"]]></anchorNameExpression>
+			</textField>
+			<textField bookmarkLevel="1">
+				<reportElement x="0" y="280" width="100" height="30" uuid="7cc9b5db-cf6c-4ad3-af4b-b2e8c1affdea"/>
+				<textElement>
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["横柱状图"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["横柱状图"]]></anchorNameExpression>
+			</textField>
+		</band>
+		<band height="662">
+			<componentElement>
+				<reportElement x="0" y="30" width="560" height="250" uuid="b9366c42-fdb3-484e-b6cd-a5d04b304d8f"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="StackedBar">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="title.text" value=""/>
+						<hc:chartProperty name="credits.enabled" value="false"/>
+						<hc:chartProperty name="credits.href" value=""/>
+						<hc:chartProperty name="credits.text" value=""/>
+						<hc:chartProperty name="yAxis.title.text" value=""/>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="com.jaspersoft.studio.highcharts.dataconfiguration.simple" value="true"/>
+						<hc:chartProperty name="xAxis.labels.step"/>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="9左右柱状图" uuid="220420ff-f961-4070-b362-5faf008ecc83">
+									<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+								</datasetRun>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Level1">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{text}]]></bucketExpression>
+									<labelExpression><![CDATA[$F{text}]]></labelExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns">
+							<axisLevel name="Series1">
+								<labelExpression><![CDATA[]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{name}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Measure1" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA[""]]></labelExpression>
+							<valueExpression><![CDATA[$F{num}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+				</hc:chart>
+			</componentElement>
+			<componentElement>
+				<reportElement x="60" y="310" width="410" height="350" uuid="64d13947-a538-4d5f-bbf8-f5d06e1ad794"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="SpiderLine">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="title.text" value=""/>
+						<hc:chartProperty name="credits.enabled" value="false"/>
+						<hc:chartProperty name="credits.href" value=""/>
+						<hc:chartProperty name="credits.text" value=""/>
+						<hc:chartProperty name="yAxis.title.text" value=""/>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="com.jaspersoft.studio.highcharts.dataconfiguration.simple" value="true"/>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="图4 单柱状图" uuid="6dbca0d3-be72-40b4-b0c1-57b6ac380639">
+									<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+								</datasetRun>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Level1">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{address}]]></bucketExpression>
+									<labelExpression><![CDATA[$F{address}]]></labelExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns">
+							<axisLevel name="Series1">
+								<labelExpression><![CDATA[]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{item}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Measure1" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA[""]]></labelExpression>
+							<valueExpression><![CDATA[$F{value}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+				</hc:chart>
+			</componentElement>
+			<textField bookmarkLevel="1">
+				<reportElement x="0" y="0" width="100" height="30" uuid="d0ed1a7e-3ddd-4cdb-9e7f-99b9b1cf28d2"/>
+				<textElement>
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["左右柱状图"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["横柱状图"]]></anchorNameExpression>
+			</textField>
+			<textField bookmarkLevel="1">
+				<reportElement x="0" y="280" width="100" height="30" uuid="3db8c36b-f8cb-44de-a5f1-39835b747410"/>
+				<textElement>
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["雷达图"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["雷达图"]]></anchorNameExpression>
+			</textField>
+		</band>
+		<band height="722">
+			<componentElement>
+				<reportElement x="60" y="30" width="410" height="350" uuid="2e33ff54-620c-4729-a26d-f0e76a243173"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="SpiderLine">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="title.text" value=""/>
+						<hc:chartProperty name="credits.enabled" value="false"/>
+						<hc:chartProperty name="credits.href" value=""/>
+						<hc:chartProperty name="credits.text" value=""/>
+						<hc:chartProperty name="yAxis.title.text" value=""/>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="com.jaspersoft.studio.highcharts.dataconfiguration.simple" value="true"/>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="图5双柱形图" uuid="cd840dca-095d-4376-bb2c-ef9e4906caeb">
+									<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+								</datasetRun>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Level1">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{address}+$F{sex}]]></bucketExpression>
+									<labelExpression><![CDATA[$F{address}+$F{sex}]]></labelExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns">
+							<axisLevel name="Series1">
+								<labelExpression><![CDATA[]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{item}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Measure1" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA[""]]></labelExpression>
+							<valueExpression><![CDATA[$F{value}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+				</hc:chart>
+			</componentElement>
+			<componentElement>
+				<reportElement x="0" y="410" width="560" height="310" uuid="8b11a1d4-30d1-4dda-8c9c-7746e1084cf1"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="ColumnSpline">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="title.text" value=""/>
+						<hc:chartProperty name="credits.enabled" value="false"/>
+						<hc:chartProperty name="credits.href" value=""/>
+						<hc:chartProperty name="credits.text" value=""/>
+						<hc:chartProperty name="yAxis.title.text" value=""/>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="com.jaspersoft.studio.highcharts.dataconfiguration.simple" value="true"/>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="图5双柱形图" uuid="ece22e63-c241-4f3b-9c9e-de11b74f41cd">
+									<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+								</datasetRun>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Level1">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{address} +$F{sex}+$F{item}]]></bucketExpression>
+									<labelExpression><![CDATA[$F{address} +" - "+$F{sex}+" - "+$F{item}]]></labelExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns"/>
+						<multiAxisMeasure name="Measure1" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA["指标一"]]></labelExpression>
+							<valueExpression><![CDATA[$F{value}]]></valueExpression>
+						</multiAxisMeasure>
+						<multiAxisMeasure name="Measure2" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA["指标二"]]></labelExpression>
+							<valueExpression><![CDATA[$F{proportion}]]></valueExpression>
+						</multiAxisMeasure>
+						<multiAxisMeasure name="Measure3" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA["指标三"]]></labelExpression>
+							<valueExpression><![CDATA[$F{value}-1]]></valueExpression>
+						</multiAxisMeasure>
+						<multiAxisMeasure name="Measure4" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA["指标四"]]></labelExpression>
+							<valueExpression><![CDATA[$F{value}-2]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+					<hc:series name="Measure1"/>
+					<hc:series name="Measure4"/>
+					<hc:series name="Measure3">
+						<hc:contributor name="SeriesProperty">
+							<hc:contributorProperty name="type" valueType="Expression">
+								<hc:valueExpression><![CDATA["spline"]]></hc:valueExpression>
+							</hc:contributorProperty>
+							<hc:contributorProperty name="yAxis" valueType="Expression">
+								<hc:valueExpression><![CDATA[1]]></hc:valueExpression>
+							</hc:contributorProperty>
+						</hc:contributor>
+					</hc:series>
+				</hc:chart>
+			</componentElement>
+			<textField bookmarkLevel="1">
+				<reportElement x="0" y="380" width="130" height="30" uuid="8cc3a22a-39cb-4f47-884e-abaacd9f21e6"/>
+				<textElement>
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["柱状与线型组合图"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["柱状与线型组合图"]]></anchorNameExpression>
+			</textField>
+			<textField bookmarkLevel="2">
+				<reportElement x="0" y="1" width="130" height="30" uuid="9b511232-473b-4786-96df-b0bbaf3e58bb"/>
+				<textElement>
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["多线雷达图"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["多线雷达图1"]]></anchorNameExpression>
+			</textField>
+		</band>
+		<band height="447">
+			<componentElement>
+				<reportElement x="90" y="30" width="350" height="280" uuid="3fa31b3c-8567-406d-83a7-3c2db9835788"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="Pie">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="title.text" value=""/>
+						<hc:chartProperty name="credits.enabled" value="false"/>
+						<hc:chartProperty name="credits.href" value=""/>
+						<hc:chartProperty name="credits.text" value=""/>
+						<hc:chartProperty name="yAxis.title.text" value=""/>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="com.jaspersoft.studio.highcharts.dataconfiguration.simple" value="true"/>
+						<hc:chartProperty name="plotOptions.pie.showInLegend" value="true"/>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="人数" uuid="0f2bddec-c3b6-45e1-a0e3-4b3ab73697ff">
+									<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+								</datasetRun>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Level1">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{text}]]></bucketExpression>
+									<labelExpression><![CDATA[$F{text}]]></labelExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Measure1" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA[""]]></labelExpression>
+							<valueExpression><![CDATA[$F{num}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+				</hc:chart>
+			</componentElement>
+			<textField bookmarkLevel="1">
+				<reportElement x="1" y="0" width="100" height="30" uuid="9b02e886-1942-4243-b07f-5873e0579299"/>
+				<textElement>
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["饼状图"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["饼状图"]]></anchorNameExpression>
+			</textField>
+			<textField bookmarkLevel="1">
+				<reportElement x="2" y="310" width="100" height="30" uuid="8419a472-111c-4b33-baaa-8ceb196df66a"/>
+				<textElement>
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["表格-普通"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["表格-普通"]]></anchorNameExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="60" y="350" width="400" height="90" uuid="6245aa01-ff02-4f9b-bac5-128349a103e1">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="9左右柱状图" uuid="8818a437-2a13-48d6-aafa-19d5e1ba92a6">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="40" uuid="19edb28b-b708-41ae-8d2d-86ab02adfd13">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="a5d14248-d5eb-4f12-9b43-4f79e499ba12"/>
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<text><![CDATA[id]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter height="30"/>
+						<jr:detailCell height="30">
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="40" height="30" uuid="d4d90821-0551-41d5-bee4-2520ed549489"/>
+								<textElement>
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="120" uuid="1468912a-e295-48b4-936b-afd1cf85ac63">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="120" height="30" uuid="e902b215-6620-4be0-86f1-130383b85504"/>
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<text><![CDATA[名称]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter height="30"/>
+						<jr:detailCell height="30">
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="120" height="30" uuid="2a7c5a3b-fb92-406e-bb2b-4992c0a718f0"/>
+								<textElement>
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="137ffd55-a6d6-49a3-bfd8-453fbd8c4ae3">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="30" uuid="2c9721e2-ad87-4958-b92b-ef31dd793638"/>
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<text><![CDATA[强度]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter height="30"/>
+						<jr:detailCell height="30">
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="80" height="30" uuid="afb84f27-edbe-41cd-9cf6-d6a9e8c9eb1d"/>
+								<textElement>
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{text}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="110" uuid="1ce4d2f3-2f1b-4e77-86e2-b9048cd3802f">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:columnHeader height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="110" height="30" uuid="399edd4c-06d2-4296-b9ab-0e14cf70af3f"/>
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<text><![CDATA[值]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter height="30"/>
+						<jr:detailCell height="30">
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="110" height="30" uuid="340f79e6-697e-43ab-8ccf-e77a4ffad4dc"/>
+								<textElement>
+									<font fontName="微软雅黑"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{num}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+		<band height="113">
+			<textField bookmarkLevel="1">
+				<reportElement x="0" y="6" width="100" height="30" uuid="16b31b1a-0640-4420-9c4a-c7e7422af054"/>
+				<textElement>
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["表格-表头合并"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["表格-表头合并"]]></anchorNameExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="60" y="46" width="400" height="60" uuid="398025e7-1a3f-41fb-8468-8a455f078d50">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="9左右柱状图" uuid="8db72ae5-c3b1-411f-8176-202d704f30a7">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:columnGroup width="160" uuid="6a58265f-208e-4c7b-93c6-9e448aa0fa8d">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [2]"/>
+						<jr:columnHeader height="30" rowSpan="1">
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="0" width="160" height="30" uuid="ab2e1b60-6838-4720-8636-183a80f51196"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="黑体"/>
+								</textElement>
+								<text><![CDATA[名称]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:column width="40" uuid="de61e869-ff80-4e64-8496-6f7d86e9df20">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+							<jr:detailCell height="30">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textField>
+									<reportElement x="0" y="0" width="40" height="30" uuid="aad1d075-93af-4ecb-9afa-a9dd10d7cf29"/>
+									<textElement>
+										<font fontName="黑体"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:columnGroup width="120" uuid="10a6c6c3-49cc-4055-bff8-7f08545bde75">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [1]"/>
+							<jr:column width="120" uuid="297c64a1-2793-420f-8296-8d7aabf68ecf">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+								<jr:detailCell height="30">
+									<box>
+										<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									</box>
+									<textField>
+										<reportElement x="0" y="0" width="120" height="30" uuid="c0a1b383-fb81-4689-9d1f-064f9fc513fa"/>
+										<textElement>
+											<font fontName="黑体"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+						</jr:columnGroup>
+					</jr:columnGroup>
+					<jr:columnGroup width="80" uuid="4f146f3e-5f8b-4c0b-846e-a174c3bd5971">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [1]"/>
+						<jr:columnHeader height="30" rowSpan="1">
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="30" uuid="637ca8a1-2d0a-4bef-94b3-04a740255b06"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="黑体"/>
+								</textElement>
+								<text><![CDATA[强度]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:column width="80" uuid="59cbb596-afc4-4dd2-a9fc-6ffc5c84559c">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+							<jr:detailCell height="30">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textField>
+									<reportElement x="0" y="0" width="80" height="30" uuid="5773eecc-cc58-49a4-8d28-4a5924d90f81"/>
+									<textElement>
+										<font fontName="黑体"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{text}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+					<jr:columnGroup width="110" uuid="b57537ee-37d8-4d84-8b5d-450f284b445a">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [1]"/>
+						<jr:columnHeader height="30" rowSpan="1">
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="0" width="110" height="30" uuid="7b48b355-6f51-43fe-a36e-296c152b405a"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="黑体"/>
+								</textElement>
+								<text><![CDATA[值]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:column width="110" uuid="fea23a45-ffcf-4c49-9c9d-ba428bd2fcad">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+							<jr:detailCell height="30">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textField>
+									<reportElement x="0" y="0" width="110" height="30" uuid="25b7904c-c5d8-4651-9a90-d724eba05baf"/>
+									<textElement>
+										<font fontName="黑体"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{num}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+		</band>
+		<band height="74">
+			<textField bookmarkLevel="1">
+				<reportElement x="0" y="2" width="100" height="30" uuid="2ab4664b-2a94-42fb-b6c7-288f82206131"/>
+				<textElement>
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["表格-行合并"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["表格-行合并"]]></anchorNameExpression>
+			</textField>
+			<subreport>
+				<reportElement x="2" y="30" width="558" height="40" uuid="472059e0-39b7-4ab7-b646-8d50314ac7df"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["表格.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<summary>
+		<band height="720" splitType="Stretch">
+			<componentElement>
+				<reportElement x="-3" y="80" width="560" height="310" uuid="cf3326e6-764b-4df0-afcd-a7673bc49778"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="ColumnSpline">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="title.text" value=""/>
+						<hc:chartProperty name="credits.enabled" value="false"/>
+						<hc:chartProperty name="credits.href" value=""/>
+						<hc:chartProperty name="credits.text" value=""/>
+						<hc:chartProperty name="yAxis.title.text" value=""/>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="com.jaspersoft.studio.highcharts.dataconfiguration.simple" value="true"/>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="柱线图" uuid="6381190b-a85f-48f6-ad04-7661242235ca">
+									<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+								</datasetRun>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Level1">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{address}]]></bucketExpression>
+									<labelExpression><![CDATA[$F{address}]]></labelExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns"/>
+						<multiAxisMeasure name="Measure1" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA["指标一"]]></labelExpression>
+							<valueExpression><![CDATA[$F{value1}]]></valueExpression>
+						</multiAxisMeasure>
+						<multiAxisMeasure name="Measure2" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA["指标二"]]></labelExpression>
+							<valueExpression><![CDATA[$F{value2}]]></valueExpression>
+						</multiAxisMeasure>
+						<multiAxisMeasure name="Measure3" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA["指标三"]]></labelExpression>
+							<valueExpression><![CDATA[$F{value3}]]></valueExpression>
+						</multiAxisMeasure>
+						<multiAxisMeasure name="Measure4" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA["指标四"]]></labelExpression>
+							<valueExpression><![CDATA[$F{value4}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+					<hc:series name="Measure1"/>
+					<hc:series name="Measure4"/>
+					<hc:series name="Measure3">
+						<hc:contributor name="SeriesProperty">
+							<hc:contributorProperty name="type" valueType="Expression">
+								<hc:valueExpression><![CDATA["spline"]]></hc:valueExpression>
+							</hc:contributorProperty>
+							<hc:contributorProperty name="yAxis" valueType="Expression">
+								<hc:valueExpression><![CDATA[1]]></hc:valueExpression>
+							</hc:contributorProperty>
+						</hc:contributor>
+					</hc:series>
+				</hc:chart>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>
