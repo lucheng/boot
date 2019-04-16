@@ -1,0 +1,38 @@
+server:
+  port: 8044
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native
+  cloud:
+      config:
+        server:
+          native:
+            search-locations: classpath:/config-files/
+        fail-fast: true
+management:
+  server:
+      port: 9044
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    shutdown:
+      enabled: true
+  metrics:
+    web:
+      server:
+        auto-time-requests: true
+        
+---
+spring:
+  profiles: native
+  cloud:
+      config:
+        server:
+          native:
+            search-locations: classpath:/config-files/
+        fail-fast: true
