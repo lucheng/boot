@@ -34,9 +34,7 @@ public class ThisWillActuallyRun {
 	@RequestMapping(value = "/exportPdf")
 	public void exportPdf(HttpServletRequest request, HttpServletResponse response) {
 		response.setCharacterEncoding("UTF-8");
-//		ServletContext servletContext = request.getSession().getServletContext();
-//		String root_path = servletContext.getRealPath("/WEB-INF/report/" + "input_value_detail.jasper");// 报表目录路径
-		String root_path = request.getSession().getServletContext().getRealPath("/") + "Wave_Book.jasper";
+		String root_path = this.getClass().getResource("/Wave_Book.jasper").getPath();
 		OutputStream out = null;
 		Connection conn = null;
 		try {

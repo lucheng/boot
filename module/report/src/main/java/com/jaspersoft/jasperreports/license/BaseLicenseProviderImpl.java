@@ -15,7 +15,6 @@ import com.jp.protection.pub.ProtectionFactory;
 
 public abstract class BaseLicenseProviderImpl implements LicenseProvider {
 	private static final Log log = LogFactory.getLog(BaseLicenseProviderImpl.class);
-	private static final long LICENSE_CHECK_INTERVAL = 3600000L;
 	private final byte[] decryptKeyBytes;
 	private final String securityAlgorithm;
 	private LicenseReader licenseReader;
@@ -33,7 +32,7 @@ public abstract class BaseLicenseProviderImpl implements LicenseProvider {
 		this.errorCode = null;
 		this.errorMessage = null;
 		this.errorArgs = null;
-		this.enabledFeatures = new HashSet();
+		this.enabledFeatures = new HashSet<>();
 	}
 
 	protected final void init() {
@@ -125,10 +124,6 @@ public abstract class BaseLicenseProviderImpl implements LicenseProvider {
 
 	protected abstract void doCheckLicense(LicenseHost paramLicenseHost, boolean paramBoolean);
 
-	private boolean licenseOK() {
-		return licenseOK(this.licenseHost.getLicense());
-	}
-
 	protected boolean licenseOK(License license) {
 		return (license != null) && (license.getLicenseState() == 2);
 	}
@@ -146,20 +141,10 @@ public abstract class BaseLicenseProviderImpl implements LicenseProvider {
 			checkLicense();
 		}
 		return;
-		/*
-		 * if (this.errorCode != null) { throw new LicenseException(this.errorCode,
-		 * this.errorMessage, this.errorArgs); } if (!licenseOK()) { throw new
-		 * LicenseException("license.invalid.state", "License is in invalid state"); }
-		 */
 	}
 
 	public synchronized void requireFeature(String featureName) {
 		return;
-		/*
-		 * requireLicense(); if (!checkFeature(featureName)) { throw new
-		 * LicenseException("license.feature.disabled", "Feature " + featureName +
-		 * " is not enabled", new Object[] { featureName }); }
-		 */
 	}
 
 	protected boolean checkFeature(String featureName) {
