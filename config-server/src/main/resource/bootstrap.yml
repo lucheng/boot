@@ -1,11 +1,8 @@
-server:
-  port: 8044
-
 spring:
   application:
     name: config-server
   profiles:
-    active: native
+    active: native,dev
   cloud:
       config:
         server:
@@ -13,8 +10,6 @@ spring:
             search-locations: classpath:/config-files/
         fail-fast: true
 management:
-  server:
-      port: 9044
   endpoints:
     web:
       exposure:
