@@ -1,12 +1,12 @@
 spring:
   application:
-    name: admin
+    name: config-server
   profiles:
-    active: dev
-
-management: 
+    active: git,dev
+    
+management:
   endpoints:
-    web: 
+    web:
       exposure:
         include: '*'
   endpoint:

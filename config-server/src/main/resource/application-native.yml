@@ -1,0 +1,8 @@
+spring:
+  profiles: native
+  cloud:
+      config:
+        server:
+          native:
+            search-locations: classpath:/config-files/
+        fail-fast: true
