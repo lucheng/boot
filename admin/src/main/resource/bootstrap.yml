@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: admin
+  profiles:
+    active: dev
+  cloud:
+    config:
+      fail-fast: false
+      discovery:
+        service-id: config-server
+        enabled: true
+      profile: ${spring.profiles.active}
+      label: ${spring.profiles.active}
+  rabbitmq: 
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirms: true
+    virtual-host: /     
+management: 
+  endpoints:
+    web: 
+      exposure: 
+        include: '*'
+    jmx:
+      exposure:
+        include: '*'
+  endpoint: 
+    shutdown:
+      enabled: true
+  metrics:
+    web:
+      server:
+        auto-time-requests: true

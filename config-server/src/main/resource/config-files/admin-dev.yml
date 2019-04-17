@@ -1,0 +1,11 @@
+server:
+  port: 8066
+
+management:
+  server: 
+      port: 9066
+
+logging:
+  file: D:/logs/boot/admin.log
+  
+foo: 8066

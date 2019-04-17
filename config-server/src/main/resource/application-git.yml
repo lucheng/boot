@@ -1,0 +1,11 @@
+spring:
+  profiles: git
+  cloud:
+      config:
+        server:
+          git:
+            uri: https://github.com/lucheng/codegen/respo
+            username:
+            password:
+        label: master
+        fail-fast: true

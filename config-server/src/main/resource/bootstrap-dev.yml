@@ -1,6 +1,0 @@
-server:
-  port: 8044
-
-management:
-  server:
-      port: 9044

@@ -1,0 +1,16 @@
+server:
+  port: 8055
+
+management:
+  server:
+      port: 9055
+
+logging:
+  file: "D:/logs/boot/admin.log"
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client: 
+    serviceUrl: 
+      defaultZone: http://localhost:8761/eureka/
