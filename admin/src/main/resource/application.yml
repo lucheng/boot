@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: admin
+  profiles:
+    active: dev
+
+management: 
+  endpoints:
+    web: 
+      exposure:
+        include: '*'
+  endpoint:
+    shutdown:
+      enabled: true
+  metrics:
+    web:
+      server:
+        auto-time-requests: true
