@@ -1,20 +1,17 @@
 server:
-  port: 8055
+  port: 8044
 
 management:
   server:
-      port: 9055
+      port: 9044
 
-logging:
-  file: "D:/logs/boot/admin.log"
-
-eureka:
+eureka: 
   instance:
     preferIpAddress: true
   client: 
     serviceUrl: 
       defaultZone: http://localhost:8761/eureka/
-      
+
 spring:
   rabbitmq: 
     host: localhost

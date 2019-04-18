@@ -10,14 +10,12 @@ spring:
         service-id: config-server
         enabled: true
       profile: ${spring.profiles.active}
-      label: ${spring.profiles.active}
-  rabbitmq: 
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
-    publisher-confirms: true
-    virtual-host: /     
+      label: master
+      name: ${spring.application.name}
+    bus:
+      trace:
+        enabled: true  # 开启cloud bus的跟踪
+
 management: 
   endpoints:
     web: 

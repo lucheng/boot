@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 @RestController
 public class FooController {
-//	@Value("${foo}")
-//	String foo;
+	@Value("${foo}")
+	String foo;
 	@GetMapping(value = "/foo")
 	public String hi(){
-		return "00000";
+		return foo;
 	}
 }

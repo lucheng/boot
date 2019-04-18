@@ -4,7 +4,10 @@ spring:
       config:
         server:
           git:
-            uri: https://github.com/lucheng/codegen/respo
+            default-label: master
+            uri: https://github.com/lucheng/codegen
+            search-paths:
+            - /respo
             username:
             password:
         label: master

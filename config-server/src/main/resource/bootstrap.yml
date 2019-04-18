@@ -3,7 +3,11 @@ spring:
     name: config-server
   profiles:
     active: git,dev
-    
+  cloud:
+    bus:
+      trace:
+        enabled: true  # 开启cloud bus的跟踪
+        
 management:
   endpoints:
     web:
