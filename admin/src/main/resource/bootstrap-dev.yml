@@ -6,14 +6,14 @@ management:
       port: 9055
 
 logging:
-  file: "D:/logs/boot/admin.log"
+  file: "D:/logs/boot/dev/admin.log"
 
 eureka:
   instance:
     preferIpAddress: true
   client: 
     serviceUrl: 
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8077/eureka/
       
 spring:
   rabbitmq: 

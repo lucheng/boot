@@ -1,8 +1,12 @@
 server:
-  port: 8761                    # 指定该Eureka实例的端口
-  
+  port: 8077                    # 指定该Eureka实例的端口
+
+management:
+  server:
+    port: 9077
+
 logging:
-  file: "D:/logs/boot/${spring.application.name}.log"
+  file: "D:/logs/boot/dev/${spring.application.name}.log"
 
 eureka:
   instance:
@@ -14,3 +18,15 @@ eureka:
     fetchRegistry: true
     serviceUrl:
        defaultZone: http://${eureka.instance.hostname:localhost}:${server.port:8761}/eureka/
+
+
+spring:
+  mail:
+    default-encoding: UTF-8  # 字符集
+    host: smtp.163.com  # 电子邮件地址
+    username: holyforjobs@163.com #邮箱账号名
+    password: jiu23456 #授权密码
+    protocol: smtp #协议
+    properties:
+      set-to: 653848177@qq.com
+

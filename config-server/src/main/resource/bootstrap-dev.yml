@@ -10,7 +10,7 @@ eureka:
     preferIpAddress: true
   client: 
     serviceUrl: 
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8077/eureka/
 
 spring:
   rabbitmq: 
