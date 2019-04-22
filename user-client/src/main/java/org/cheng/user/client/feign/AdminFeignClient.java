@@ -23,7 +23,9 @@ public interface AdminFeignClient {
 
 		@Override
 		public AdminFeignClient create(Throwable cause) {
-			LOGGER.error(cause.getMessage(),cause);
+			
+			LOGGER.warn(cause.getMessage(),cause);
+			
 			return new AdminFeignClient() {
 				@Override
 				public String admin(Integer id) {
