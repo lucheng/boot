@@ -14,6 +14,7 @@
 
 - Spring Boot 版本： 2.1.4.RELEASE
 - Spring Cloud 版本：Greenwich.RELEASE  #格林尼治 - 英国伦敦格林尼治区，位于伦敦东南、泰晤士河南岸#
+- Spring Cloud Ribbon 负载均衡
 
 ####模块信息####
 

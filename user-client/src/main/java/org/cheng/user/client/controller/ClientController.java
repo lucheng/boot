@@ -12,15 +12,16 @@ public class ClientController {
 
 	@Autowired
 	private UserFeignClient userFeignClient;
-	
+
 	@Autowired
 	private AdminFeignClient adminFeignClient;
 
 	@GetMapping(value = "/port/{id}")
 	public String port(@PathVariable("id") Integer id) {
+
 		return userFeignClient.port(id);
 	}
-	
+
 	@GetMapping(value = "/admin/{id}")
 	public String admin(@PathVariable("id") Integer id) {
 		return adminFeignClient.admin(id);
