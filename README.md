@@ -2,6 +2,13 @@
 
 ###boot项目为一个SpringCloud框架的demo
 
+####目录####
+
+- 版本信息
+
+- 模块信息
+
+- 环境变量
 
 ####版本信息####
 
@@ -14,3 +21,10 @@
 - config-server为配置中心
 
 
+####设置环境变量####
+
+LOG_HOME:日志根目录
+
+####注意点####
+- Feign 启用hystrix支持
+  feign.hystrix.enabled = true
