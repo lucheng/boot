@@ -29,8 +29,9 @@
 		<module>config-server</module>
 		<module>eureka-server</module>
 		<module>user</module>
+		<module>user-client</module>
 	</modules>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>de.codecentric</groupId>
@@ -43,7 +44,7 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 	</dependencies>
-	
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>

@@ -1,0 +1,22 @@
+spring:
+  profiles: dev
+  
+    
+server:
+  port: 8033
+
+management:
+  server:
+      port: 9033
+
+logging:
+  file: "D:/logs/boot/${spring.profiles}/${spring.application.name}.log"
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+       defaultZone: http://localhost:8077/eureka/

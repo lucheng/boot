@@ -35,7 +35,7 @@ public class EurekaStateListener {
 	public void listen(EurekaInstanceCanceledEvent event) {
 		String msg = "服务" + event.getAppName() + "\n" + event.getServerId() + "已下线";
 		LOGGER.info(msg);
-		this.send(msg);
+//		this.send(msg);
 	}
 
 	@EventListener(condition = "#event.replication==false")
@@ -44,7 +44,7 @@ public class EurekaStateListener {
 		String msg = "服务" + instanceInfo.getAppName() + "\n" + instanceInfo.getHostName() + ":" + instanceInfo.getPort()
 				+ " \nip: " + instanceInfo.getIPAddr() + "进行注册";
 		LOGGER.info(msg);
-		this.send(msg);
+//		this.send(msg);
 	}
 
 	@EventListener
