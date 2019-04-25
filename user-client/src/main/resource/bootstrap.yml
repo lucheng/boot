@@ -7,7 +7,14 @@ spring:
 feign:
   hystrix:
     enabled: true
-    
+
+turbine:
+  appConfig: user,user-client
+  clusterNameExpression: "'default'"
+  endpoints:
+    clusters:
+      enabled: true
+
 management: 
   endpoints:
     web: 
