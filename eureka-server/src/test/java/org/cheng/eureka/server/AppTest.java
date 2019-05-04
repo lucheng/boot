@@ -1,38 +1,27 @@
 package org.cheng.eureka.server;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.env.Environment;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringBootTest(classes = EurekaServerApplication.class)
+public class AppTest {
+	@Autowired
+	Environment environment;
+	@Test
+	public void findAllUsers(){
+		System.out.println(environment);
+		System.out.println(environment.getProperty("JAVA_HOME"));
+		System.out.println(environment.getProperty("PATH"));
+		System.out.println(environment.getProperty("LOG_HOME"));
+		System.out.println(System.getenv().get("MAVEN_HOME"));
+		System.out.println(System.getenv().get("LOG_HOME"));
+		for(String s:System.getenv().keySet()) {
+			System.out.println(s + " - " + System.getenv().get(s));
+		}
+	}
 }

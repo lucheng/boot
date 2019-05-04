@@ -6,7 +6,7 @@ management:
     port: 9077
 
 logging:
-  file: "D:/logs/boot/dev/${spring.application.name}.log"
+  file: "${LOG_HOME :D:/logs}/boot/${spring.profiles}/${spring.application.name}.log"
 
 eureka:
   instance:
@@ -19,7 +19,6 @@ eureka:
     serviceUrl:
        defaultZone: http://${eureka.instance.hostname:localhost}:${server.port:8761}/eureka/
 
-
 spring:
   mail:
     default-encoding: UTF-8  # 字符集
@@ -29,4 +28,5 @@ spring:
     protocol: smtp #协议
     properties:
       set-to: 653848177@qq.com
+  profiles: dev
 

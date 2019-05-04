@@ -8,6 +8,9 @@ feign:
   hystrix:
     enabled: true
 
+#hystrix.shareSecurityContext: true
+hystrix.command.default.execution.isolation.strategy: SEMAPHORE
+
 turbine:
   appConfig: user,user-client
   clusterNameExpression: "'default'"
