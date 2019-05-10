@@ -25,7 +25,9 @@
 
 - eureka-server 注册中心
 - config-server 配置中心
-- admin         spring boot admin 服务监控
+- monitor       监控模块
+    - monitor-admin        spring boot admin 服务监控
+    - monitor-turbine       spring cloud turbine Hystrix聚合监控
 
 
 ####设置环境变量####
@@ -38,7 +40,7 @@ LOG_HOME:日志根目录
 
 
 ####待完成####
-- 读写分离
-- 权限支持
-- 容器管理
+- shardingsphere 读写分离
+- auth 权限支持
+- docker 容器管理
  
