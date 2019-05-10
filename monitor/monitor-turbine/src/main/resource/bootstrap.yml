@@ -1,22 +1,22 @@
 spring:
   application:
-    name: user-client
+    name: monitor-turbine
   profiles:
     active: dev
 
-feign:
-  hystrix:
-    enabled: true
+#feign:
+#  hystrix:
+#    enabled: true
 
 #hystrix.shareSecurityContext: true
 #hystrix.command.default.execution.isolation.strategy: SEMAPHORE
 
-#turbine:
-#  appConfig: user,user-client
-#  clusterNameExpression: "'default'"
-#  endpoints:
-#    clusters:
-#      enabled: true
+turbine:
+  appConfig: user,user-client
+  clusterNameExpression: "'default'"
+  endpoints:
+    clusters:
+      enabled: true
 
 management: 
   endpoints:

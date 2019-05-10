@@ -4,6 +4,10 @@ spring:
   profiles:
     active: dev
 
+feign:
+  hystrix:
+    enabled: true
+
 management: 
   endpoints:
     web: 

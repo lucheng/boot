@@ -1,6 +1,6 @@
 spring:
   application:
-    name: admin
+    name: monitor-admin
   profiles:
     active: dev
   cloud:
