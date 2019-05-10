@@ -6,7 +6,7 @@ management:
       port: 9055
 
 logging:
-  file: "D:/logs/boot/dev/admin.log"
+  file: "${LOG_HOME: D:/logs}/boot/${spring.profiles}/${spring.application.name}.log"
 
 eureka:
   instance:

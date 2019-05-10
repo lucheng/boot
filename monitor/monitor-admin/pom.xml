@@ -9,7 +9,7 @@
 		<artifactId>boot</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>admin</artifactId>
+	<artifactId>monitor-admin</artifactId>
 	<name>admin</name>
 	<url>http://maven.apache.org</url>
 	<properties>

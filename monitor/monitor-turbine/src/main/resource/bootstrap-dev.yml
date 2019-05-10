@@ -7,11 +7,11 @@ spring:
   password: guest
     
 server:
-  port: 8033
+  port: 8055
 
 management:
   server:
-      port: 9033
+      port: 9055
 
 logging:
   file: "${LOG_HOME: D:/logs}/boot/${spring.profiles}/${spring.application.name}.log"
@@ -20,7 +20,7 @@ eureka:
   instance:
     preferIpAddress: true
     metadata-map:
-      management.port: 9033
+      management.port: 9055
   client:
     registerWithEureka: true
     fetchRegistry: true
