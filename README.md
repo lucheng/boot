@@ -19,6 +19,7 @@
 - Spring Cloud Ribbon 负载均衡
 - Spring Cloud Hystrix 熔断器  HystrixDashboard 熔断器指示板
 - Spring Cloud Turbine Turbine 聚合监控
+- CacheCloud    缓存监控 
 
 ####模块信息####
 
@@ -37,7 +38,6 @@ LOG_HOME:日志根目录
 
 
 ####待完成####
-- 缓存监控 cachecloud 待定
 - 读写分离
 - 权限支持
 - 容器管理
