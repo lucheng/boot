@@ -23,3 +23,7 @@ management:
     web:
       server:
         auto-time-requests: true
+        
+logging:
+  level:
+     org.springframework.web.servlet.DispatcherServlet: DEBUG

@@ -28,7 +28,7 @@ management:
 
 logging:
   file: "${LOG_HOME: D:/logs}/boot/${spring.profiles}/${spring.application.name}.log"
-
+  
 eureka:
   instance:
     preferIpAddress: true
