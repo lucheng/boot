@@ -20,7 +20,7 @@
 1. Spring Cloud Hystrix 熔断器  HystrixDashboard 熔断器指示板
 1. Spring Cloud Turbine Turbine 聚合监控
 1. CacheCloud    缓存监控 
-
+1. Spring Cloud Gateway  api网关
 
 ####模块信息####
 
@@ -41,7 +41,6 @@ LOG_HOME:日志根目录
 
 
 ####待完成####
-- Spring Cloud Gateway
 - Spring Cloud Sleuth
 - Shardingsphere 读写分离
 - Auth2.0 权限支持
