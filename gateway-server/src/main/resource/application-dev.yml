@@ -1,0 +1,41 @@
+spring:
+  profiles: dev
+  cloud:
+      gateway:
+        globalcors:
+          corsConfigurations:
+            '[/**]':
+              allowedOrigins: "*"
+              allowedMethods: "*"
+              allowedHeaders: "*"
+              exposedHeaders: "x-total-count"
+              allowCredentials: true
+        discovery:
+           locator:
+              enabled: true
+        routes:
+        - id: user
+          uri: lb://USER
+          order: 0
+          predicates:
+          - Path=/user/**
+          filters:
+          - RewritePath=/user/(?<segment>.*), /$\{segment}     
+server:
+  port: 8011
+
+management:
+  server:
+    port: 9011
+
+logging:
+  file: "${LOG_HOME :D:/logs}/boot/${spring.profiles}/${spring.application.name}.log"
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+       defaultZone: http://localhost:8077/eureka/

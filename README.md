@@ -13,13 +13,14 @@
 ####版本信息####
 
 1. Spring Boot 版本： 2.1.4.RELEASE
-- Spring Boot Admin 服务监控
-- Spring Boot Cache 缓存组件
-- Spring Cloud 版本：Greenwich.RELEASE  #格林尼治 - 英国伦敦格林尼治区，位于伦敦东南、泰晤士河南岸#
-- Spring Cloud Ribbon 负载均衡
-- Spring Cloud Hystrix 熔断器  HystrixDashboard 熔断器指示板
-- Spring Cloud Turbine Turbine 聚合监控
-- CacheCloud    缓存监控 
+1. Spring Boot Admin 服务监控
+1. Spring Boot Cache 缓存组件
+1. Spring Cloud 版本：Greenwich.RELEASE  #格林尼治 - 英国伦敦格林尼治区，位于伦敦东南、泰晤士河南岸#
+1. Spring Cloud Ribbon 负载均衡
+1. Spring Cloud Hystrix 熔断器  HystrixDashboard 熔断器指示板
+1. Spring Cloud Turbine Turbine 聚合监控
+1. CacheCloud    缓存监控 
+
 
 ####模块信息####
 
@@ -40,7 +41,9 @@ LOG_HOME:日志根目录
 
 
 ####待完成####
-- shardingsphere 读写分离
-- auth 权限支持
-- docker 容器管理
+- Spring Cloud Gateway
+- Spring Cloud Sleuth
+- Shardingsphere 读写分离
+- Auth2.0 权限支持
+- Docker 容器管理
  
