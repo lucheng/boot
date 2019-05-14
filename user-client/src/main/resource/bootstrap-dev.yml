@@ -1,11 +1,16 @@
 spring:
   profiles: dev
   rabbitmq: 
-  host: localhost
-  port: 5672
-  username: guest
-  password: guest
-    
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  zipkin:
+    base-url: http://localhost:8022
+  sleuth:
+    sampler:
+      percentage: 1.0
+      
 server:
   port: 8033
 
@@ -16,7 +21,7 @@ management:
 logging:
   file: "${LOG_HOME: D:/logs}/boot/${spring.profiles}/${spring.application.name}.log"
   level:
-     org.springframework.cloud.sleuth: DEBUG
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
 eureka:
   instance:
     preferIpAddress: true
