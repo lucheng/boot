@@ -1,6 +1,6 @@
 spring:
   application:
-    name: monitor-zipkin-server
+    name: trace-zipkin-server-stream
   profiles:
     active: dev
   main:

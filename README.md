@@ -28,8 +28,10 @@
 - config-server 配置中心
 - monitor       监控模块
     - monitor-admin        spring boot admin 服务监控
-    - monitor-turbine       spring cloud turbine Hystrix聚合监控
-
+    - monitor-turbine      spring cloud turbine Hystrix聚合监控
+- trace         跟踪
+    - trace-zipkin-server
+    - trace-zipkin-server-stream
 
 ####设置环境变量####
 

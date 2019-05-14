@@ -5,12 +5,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.cheng</groupId>
-		<artifactId>monitor</artifactId>
+		<groupId>org.cheng.boot</groupId>
+		<artifactId>trace</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>monitor-zipkin-server</artifactId>
-	<name>monitor-zipkin-server</name>
+	<artifactId>trace-zipkin-server-stream</artifactId>
+	<name>trace-zipkin-server-stream</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -23,12 +23,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>io.zipkin.java</groupId>
 			<artifactId>zipkin-autoconfigure-ui</artifactId>
@@ -40,6 +40,29 @@
 			<artifactId>zipkin-server</artifactId>
 			<version>${zipkin.version}</version>
 		</dependency>
+
+		<!-- 使用消息的方式收集数据（使用rabbitmq） -->
+		<dependency>
+			<groupId>io.zipkin.java</groupId>
+			<artifactId>zipkin-autoconfigure-collector-rabbitmq</artifactId>
+			<version>${zipkin.version}</version>
+		</dependency>
+		
+<!-- 
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-stream-rabbit</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zipkin</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-sleuth-zipkin-stream</artifactId>
+		</dependency> -->
 
 	</dependencies>
 

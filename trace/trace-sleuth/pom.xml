@@ -5,12 +5,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.cheng</groupId>
-		<artifactId>monitor</artifactId>
+		<groupId>org.cheng.boot</groupId>
+		<artifactId>trace</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>monitor-sleuth</artifactId>
-	<name>monitor-sleuth</name>
+	<artifactId>trace-sleuth</artifactId>
+	<name>trace-sleuth</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

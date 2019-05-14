@@ -1,36 +1,32 @@
 spring:
   profiles: dev
-  rabbitmq: 
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
-  zipkin:
-    rabbitmq:
-      queue: zipkin
-  sleuth:
-    sampler:
-      percentage: 1.0
-      
+
 server:
-  port: 8033
+  port: 8022
+  compression:
+    enabled: true  #是否开启压缩，默认为false.
 
 management:
   server:
-      port: 9033
+      port: 9022
 
 logging:
   file: "${LOG_HOME: D:/logs}/boot/${spring.profiles}/${spring.application.name}.log"
   level:
-    org.springframework.web.servlet.DispatcherServlet: DEBUG
+     org.springframework.web.servlet.DispatcherServlet: DEBUG
 eureka:
   instance:
     preferIpAddress: true
-    metadata-map:
-      management.port: 9033
   client:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
        defaultZone: http://localhost:8077/eureka/
-   
+
+zipkin:
+  collector:
+    rabbitmq:
+      addresses: localhost:5672
+      password: guest
+      username: guest
+      queue: zipkin

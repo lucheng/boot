@@ -10,13 +10,13 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>org.cheng.boot</groupId>
-	<artifactId>monitor</artifactId>
+	<artifactId>trace</artifactId>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<packaging>pom</packaging>
 	<modules>
-		<module>monitor-admin</module>
-		<module>monitor-turbine</module>
+		<module>trace-zipkin-server</module>
+		<module>trace-zipkin-server-stream</module>
 	</modules>
 </project>
