@@ -1,6 +1,12 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8077/eureka/
+server:
+  port: 8762
 spring:
   application:
-    name: service-auth
+    name: service-hi
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/spring-cloud-auth?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
@@ -11,26 +17,17 @@ spring:
       ddl-auto: update
     show-sql: true
     database-platform: org.hibernate.dialect.MySQL5Dialect
-server:
-  port: 5000
-  servlet:
-    context-path: /uaa
 
-#security:
-#  oauth2:
-#    resource:
-#      filter-order: 3
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:5000/uaa/users/current
 
-#  basic:
-#    enabled: false
+    client:
+      clientId: service-hi
+      clientSecret: 123456
+      accessTokenUri: http://localhost:5000/uaa/oauth/token
+      grant-type: client_credentials,password
+      scope: server
 
 debug: true
-
-#logging:
-#   level:
-#      org:debug
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8077/eureka/
