@@ -47,11 +47,12 @@ public class OAuth2AuthorizationConfig extends AuthorizationServerConfigurerAdap
 	 */
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+		clients
+		.jdbc(dataSource);//  客户端的配置信息放在数据库中
 
-		clients.inMemory() // 客户端的配置信息既可以放在内存中 ,也可以放在数据库中
-				.withClient("browser").authorizedGrantTypes("refresh_token", "password").scopes("ui").and()
-				.withClient("service-hi").secret("{noop}123456")
-				.authorizedGrantTypes("client_credentials", "refresh_token", "password").scopes("server");
+//		.inMemory()  //  客户端的配置信息放在内存中 
+//		.withClient("browser").authorizedGrantTypes("refresh_token", "password").scopes("ui").and()
+//		.withClient("service-hi").secret("{noop}123456").authorizedGrantTypes("client_credentials", "refresh_token", "password").scopes("server");
 	}
 
 	/**

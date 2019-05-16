@@ -20,8 +20,8 @@ spring:
 
 security:
   oauth2:
-    resource:
-      user-info-uri: http://localhost:5000/uaa/users/current
+#    resource:
+#      user-info-uri: http://localhost:5000/uaa/users/current
 
     client:
       clientId: service-hi
