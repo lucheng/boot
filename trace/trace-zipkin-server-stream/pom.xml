@@ -48,12 +48,12 @@
 			<version>${zipkin.version}</version>
 		</dependency>
 		
-		<!-- 使用elasticsearch存储 -->
+		<!-- 使用elasticsearch存储 
 		<dependency>
 			<groupId>io.zipkin.java</groupId>
 			<artifactId>zipkin-autoconfigure-storage-elasticsearch</artifactId>
 			<version>${zipkin.version}</version>
-		</dependency>
+		</dependency>-->
 
 	</dependencies>
 

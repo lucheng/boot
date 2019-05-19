@@ -10,7 +10,7 @@ spring:
       queue: zipkin
   sleuth:
     sampler:
-      percentage: 1.0
+      probability: 1
       
 server:
   port: 8033

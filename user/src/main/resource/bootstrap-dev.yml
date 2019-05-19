@@ -18,10 +18,11 @@ spring:
     username: guest
     password: guest
   zipkin:
-    base-url: http://localhost:8022
+    rabbitmq:
+      queue: zipkin
   sleuth:
     sampler:
-      percentage: 1.0
+      probability: 1
     
 server:
   port: 8099
