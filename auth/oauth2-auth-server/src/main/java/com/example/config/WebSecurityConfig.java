@@ -10,6 +10,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @EnableWebSecurity
@@ -38,7 +40,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //			.inMemoryAuthentication()
 //				.withUser("forezp").password("123456").roles("USER")
 // ;
-		auth.userDetailsService(userDetailsService());
+		auth.userDetailsService(userDetailsService()).passwordEncoder(passwordEncoder());
 	}
 	// @formatter:on
 
@@ -46,9 +48,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Bean
 	public UserDetailsService userDetailsService() {
 		InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager(); // 在内存中存放用户信息
-		manager.createUser(User.withUsername("forezp").password("123456").roles("USER").build());
-		manager.createUser(User.withUsername("admin").password("123456").roles("USER","ADMIN").build());
+		manager.createUser(User.withUsername("forezp").password(passwordEncoder().encode("123456")).roles("USER").build());
+		manager.createUser(User.withUsername("admin").password(passwordEncoder().encode("123456")).roles("USER","ADMIN").build());
 		return manager;
 	}
+	
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
 }

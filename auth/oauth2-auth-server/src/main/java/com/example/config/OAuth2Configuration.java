@@ -14,7 +14,9 @@ public class OAuth2Configuration extends AuthorizationServerConfigurerAdapter {
         clients.inMemory()                  // 使用in-memory存储客户端信息
                 .withClient("client")       // client_id
                 .secret("secret")                   // client_secret
-                .authorizedGrantTypes("authorization_code")     // 该client允许的授权类型
-                .scopes("app");                     // 允许的授权范围
+                .authorizedGrantTypes("authorization_code", "refresh_token")
+                .scopes("read", "write", "execute")                    // 允许的授权范围
+                .redirectUris("http://localhost:8081/login/oauth2/code/callback"); 
     }
+    
 }
