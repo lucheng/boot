@@ -5,6 +5,8 @@ import java.util.Map;
 
 import org.cheng.user.client.entity.User;
 import org.cheng.user.client.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
@@ -15,14 +17,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/user/")
 @RestController
 public class UserController {
+	private static final Logger LOG = LoggerFactory.getLogger(UserController.class);
 	@Autowired
 	private UserService userService;
 	@Autowired
 	private CacheManager cacheManager;
 	
 	@GetMapping(value = "get")
-	public User get(Integer id) {
-		return userService.get(id);
+	public String get(Integer id) {
+		User user = userService.get(id);
+		LOG.info("user-get");
+		return user==null?null:user.getName();
 	}
 	
 	@GetMapping(value = "save")

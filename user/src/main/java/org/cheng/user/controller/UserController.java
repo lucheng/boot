@@ -17,9 +17,23 @@ public class UserController {
 	private static final Logger LOG = LoggerFactory.getLogger(UserController.class);
 	@Value("${server.port}")
 	Integer port;
+	
 	@GetMapping(value = "/port/{id}")
 	public String port(@PathVariable("id") Integer id,@CookieValue("test")Object test, HttpServletRequest request){
-		LOG.info("user - " + "id:" + id + " prot:" + port + "  " + test );
-		return "id:" + id + " prot:" + port + "  " + test + request.getHeader("X-B3-TraceId");
+		
+		StringBuilder s = new StringBuilder();
+		s.append(" X-B3-TraceId:").append(request.getHeader("X-B3-TraceId"));
+		s.append(" X-B3-SpanId:").append(request.getHeader("X-B3-SpanId"));
+		s.append(" X-B3-ParentSpanId:").append(request.getHeader("X-B3-ParentSpanId"));
+		s.append(" X-B3-Sampled:").append(request.getHeader("X-B3-Sampled"));
+		s.append(" X-Span-Export:").append(request.getHeader("X-Span-Export"));
+		s.append(" TraceId:").append(request.getHeader("TraceId"));
+		s.append(" SpanId:").append(request.getHeader("SpanId"));
+		s.append(" ParentSpanId:").append(request.getHeader("ParentSpanId"));
+		s.append(" Sampled:").append(request.getHeader("Sampled"));
+		
+		LOG.info("user - " + "id:" + id + " prot:" + port + "  " + test + s);
+
+		return "id:" + id + " prot:" + port + "  " + test + " " + s;
 	}
 }
