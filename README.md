@@ -13,17 +13,18 @@
 ####版本信息####
 
 1. Spring Boot 版本： 2.1.4.RELEASE
-1. Spring Boot Admin 服务监控
-1. Spring Boot Cache 缓存组件
-1. Spring Cloud 版本：Greenwich SR1  #格林尼治 - 英国伦敦格林尼治区，位于伦敦东南、泰晤士河南岸#
-1. Spring Cloud Ribbon 负载均衡
-1. Spring Cloud Hystrix 熔断器  HystrixDashboard 熔断器指示板
-1. Spring Cloud Turbine Turbine 聚合监控
-1. CacheCloud    缓存监控 
-1. Spring Cloud Gateway  api网关
-1. Spring Cloud Sleuth 链路追踪
-1. ElasticSearch 版本：6.7.2  链路数据存储与查询
-1. Spring Cloud Zipkin  版本：1.12.3    分布式链路调用监控系统
+2. Spring Boot Admin 服务监控
+3. Spring Boot Cache 缓存组件
+4. Spring Cloud 版本：Greenwich SR1  #格林尼治 - 英国伦敦格林尼治区，位于伦敦东南、泰晤士河南岸#
+5. Spring Cloud Ribbon 负载均衡
+6. Spring Cloud Hystrix 熔断器  HystrixDashboard 熔断器指示板
+7. Spring Cloud Turbine Turbine 聚合监控
+8. CacheCloud    缓存监控 
+9. Spring Cloud Gateway  api网关
+10. Spring Cloud Sleuth 链路追踪
+11. ElasticSearch 版本：6.7.2  链路数据存储与查询
+12. Spring Cloud Zipkin  版本：1.12.3    分布式链路调用监控系统
+13. Spring Sec
 
 ####模块信息####
 
