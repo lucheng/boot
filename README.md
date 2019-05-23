@@ -1,5 +1,4 @@
 
-
 ###boot项目为一个SpringCloud框架的demo
 
 ####目录####
@@ -50,4 +49,3 @@ LOG_HOME:日志根目录
 - Shardingsphere 读写分离
 - Auth2.0 权限支持
 - Docker 容器管理
- 

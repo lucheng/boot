@@ -29,4 +29,3 @@ spring:
     properties:
       set-to: 653848177@qq.com
   profiles: dev
-
