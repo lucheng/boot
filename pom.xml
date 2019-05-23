@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.cheng</groupId>
@@ -19,10 +21,12 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+		<lombok.versin>1.18.0</lombok.versin>
+		<spring-boot-admin.versin>2.1.4</spring-boot-admin.versin>
+		<mybatis-plus-boot-starter.version>3.1.1</mybatis-plus-boot-starter.version>
 	</properties>
 
 	<modules>
-		
 		<module>config-server</module>
 		<module>eureka-server</module>
 		<module>gateway-server</module>
@@ -30,15 +34,16 @@
 		<module>module</module>
 		<module>user</module>
 		<module>user-client</module>
-    <module>trace</module>
-    <module>auth</module>
-  </modules>
+		<module>trace</module>
+		<module>upms</module>
+		<module>common</module>
+	</modules>
 
 	<dependencies>
 		<dependency>
 			<groupId>de.codecentric</groupId>
 			<artifactId>spring-boot-admin-starter-client</artifactId>
-			<version>2.1.4</version>
+			<version>${spring-boot-admin.versin}</version>
 		</dependency>
 
 		<dependency>
@@ -52,10 +57,16 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<dependencyManagement>
@@ -69,5 +80,15 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
 </project>

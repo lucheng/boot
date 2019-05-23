@@ -24,7 +24,8 @@
 1. Spring Cloud Sleuth 链路追踪
 1. ElasticSearch 版本：6.7.2  链路数据存储与查询
 1. Spring Cloud Zipkin  版本：1.12.3    分布式链路调用监控系统
-
+1. MyBatis-Plus 3.1.1 封装mybatis
+1. Lombok 1.18.0 对常用封装
 ####模块信息####
 
 - eureka-server 注册中心
