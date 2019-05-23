@@ -23,8 +23,8 @@ spring:
   mail:
     default-encoding: UTF-8  # 字符集
     host: smtp.163.com  # 电子邮件地址
-    username: holyforjobs@163.com #邮箱账号名
-    password: jiu23456 #授权密码
+    username: 888888@163.com #邮箱账号名
+    password: 123456 #授权密码
     protocol: smtp #协议
     properties:
       set-to: 653848177@qq.com
