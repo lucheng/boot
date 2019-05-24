@@ -6,7 +6,7 @@ spring:
     name: base-provider
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/spring-cloud-auth?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/spring-cloud-auth?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
     username: root
     password: 123456
   jpa:
@@ -21,3 +21,7 @@ spring:
     encoding: UTF-8
     cache: false
     check-template: false
+#mybatis支持骆驼命名
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true 

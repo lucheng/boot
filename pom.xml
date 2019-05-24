@@ -21,7 +21,10 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+
 		<lombok.versin>1.18.0</lombok.versin>
+		<swagger2.version>2.9.2</swagger2.version>
+
 		<spring-boot-admin.versin>2.1.4</spring-boot-admin.versin>
 		<mybatis-plus-boot-starter.version>3.1.1</mybatis-plus-boot-starter.version>
 	</properties>
@@ -55,10 +58,18 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
 		</dependency>
-
+		
+		<!-- lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+		</dependency>
+		
+		<!--swagger -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${swagger2.version}</version>
 		</dependency>
 
 		<dependency>

@@ -1,5 +1,6 @@
 package org.cheng.boot.auth.provider.service.impl;
 
+import org.cheng.boot.auth.provider.service.feign.BaseUserAccountRemoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,6 +19,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
+	
+	@Autowired
+	private BaseUserAccountRemoteService baseUserAccountRemoteService;
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

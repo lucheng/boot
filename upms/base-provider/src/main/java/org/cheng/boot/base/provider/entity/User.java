@@ -7,8 +7,10 @@ import lombok.Data;
 @Data
 @TableName(value = "base_user")
 public class User {
-	private Long id;
-	private String name;
-	private Integer age;
+	private Long userId;
+	private String userName;
+	private String nickName;
+	private String userType;
 	private String email;
+	private Integer status;
 }
