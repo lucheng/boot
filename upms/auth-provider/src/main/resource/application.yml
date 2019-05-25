@@ -21,3 +21,34 @@ spring:
     encoding: UTF-8
     cache: false
     check-template: false
+feign:
+  hystrix:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    jmx:
+      exposure:
+        include: '*'
+  endpoint:
+    shutdown:
+      enabled: true
+  metrics:
+    web:
+      server:
+        auto-time-requests: true
+logging:
+  level:
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
+  file: "${LOG_HOME: D:/logs}/boot/${spring.profiles}/${spring.application.name}.log"
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+       defaultZone: http://localhost:8077/eureka/  
