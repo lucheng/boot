@@ -1,0 +1,7 @@
+spring:
+  profiles: dev
+logging:
+  level:
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
+  file: "${LOG_HOME: D:/logs}/boot/${spring.profiles}/${spring.application.name}.log"
+  

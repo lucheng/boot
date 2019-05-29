@@ -1,9 +1,11 @@
 server:
-  port: 8033
+  port: 8022
 debug: true
 spring:
   application:
     name: auth-provider
+  profiles:
+    active: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/spring-cloud-auth?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
@@ -39,11 +41,6 @@ management:
     web:
       server:
         auto-time-requests: true
-logging:
-  level:
-    org.springframework.web.servlet.DispatcherServlet: DEBUG
-  file: "${LOG_HOME: D:/logs}/boot/${spring.profiles}/${spring.application.name}.log"
-
 eureka:
   instance:
     preferIpAddress: true

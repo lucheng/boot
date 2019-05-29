@@ -25,3 +25,14 @@ spring:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true 
+
+eureka:
+  instance:
+    preferIpAddress: true
+    metadata-map:
+      management.port: 9033
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+       defaultZone: http://localhost:8077/eureka/

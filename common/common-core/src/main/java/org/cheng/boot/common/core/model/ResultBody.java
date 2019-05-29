@@ -30,8 +30,9 @@ public class ResultBody<T> implements Serializable {
 		return code;
 	}
 
-	public void setCode(int code) {
+	public ResultBody<T> setCode(int code) {
 		this.code = code;
+		return this;
 	}
 
 	public String getMessage() {
@@ -46,7 +47,12 @@ public class ResultBody<T> implements Serializable {
 		return data;
 	}
 
-	public void setData(T data) {
+	public ResultBody<T> setData(T data) {
 		this.data = data;
+		return this;
 	}
+	
+	public static <T> ResultBody<T> success(T data) {
+        return new ResultBody<T>().setData(data).setCode(200);
+    }
 }

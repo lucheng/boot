@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(name = "base-provider", fallbackFactory = BaseUserAccountRemoteService.HystrixClientFallback.class)
+@FeignClient(name = "base-provider", fallback = BaseUserAccountRemoteService.HystrixClientFallback.class)
 public interface BaseUserAccountRemoteService {
 	
 	@PostMapping("/account/localLogin")
